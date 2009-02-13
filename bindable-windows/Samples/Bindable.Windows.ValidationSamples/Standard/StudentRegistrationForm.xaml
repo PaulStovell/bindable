@@ -1,0 +1,281 @@
+﻿<Window 
+    x:Class="Bindable.Windows.ValidationSamples.Standard.StudentRegistrationForm"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:Bindable.Windows.Controls;assembly=Bindable.Windows"
+    xmlns:Extensions="clr-namespace:Bindable.Windows.Extensions;assembly=Bindable.Windows"
+    xmlns:AutoCorrection="clr-namespace:Bindable.Windows.AutoCorrection;assembly=Bindable.Windows"
+    Title="{Binding Path=FirstName}" Height="600" Width="800"
+    >
+    <Window.Resources>
+        <Style TargetType="ToggleButton" x:Key="ValidationButton">
+            
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Border x:Name="border" SnapsToDevicePixels="True" CornerRadius="3,3,3,3" Padding="2" BorderBrush="Transparent" BorderThickness="1" Background="Transparent">
+                            <ContentPresenter />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#F0F0F0" Offset="0" />
+                                            <GradientStop Color="#E0E0E0" Offset="1" />
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderBrush" Value="#AAAAAA" TargetName="border" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#FFFFFF" Offset="0" />
+                                            <GradientStop Color="#F0F0F0" Offset="1" />
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderBrush" Value="#AAAAAA" TargetName="border" />
+                                <Setter Property="CornerRadius" Value="3,3,0,0" TargetName="border" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="Width" Value="220" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Controls:ValidationScope.ValidationTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <DockPanel>
+                            <ToggleButton 
+                                x:Name="toggle"
+                                DockPanel.Dock="Right"
+                                Margin="1,0,0,0" 
+                                Style="{StaticResource ValidationButton}"
+                                VerticalAlignment="Center"
+                                Extensions:ToggleButtonExtensions.UncheckOnLostFocus="True"
+                                >
+                                <Image Source="/Images/Error-16x16.png" SnapsToDevicePixels="True" Width="16" Height="16" />
+                            </ToggleButton>
+                            <Popup
+                                PopupAnimation="Fade"
+                                AllowsTransparency="True"
+                                x:Name="popup"
+                                PlacementTarget="{Binding ElementName=toggle}"
+                                Placement="Bottom"
+                                HorizontalOffset="-178"
+                                VerticalOffset="-1"
+                                IsOpen="{Binding ElementName=toggle, Path=IsChecked}"
+                                >
+                                <Border Width="200" Padding="3" CornerRadius="3,0,3,3" BorderBrush="#CCCCCC" BorderThickness="1" SnapsToDevicePixels="True">
+                                    <Border.Background>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#FFFFFF" Offset="0" />
+                                            <GradientStop Color="#F0F0F0" Offset="1" />
+                                        </RadialGradientBrush>
+                                    </Border.Background>
+                                    <DockPanel>
+                                        <TextBlock DockPanel.Dock="Bottom">
+                                            <Hyperlink Click="MoreInfoClick">More information...</Hyperlink>
+                                        </TextBlock>
+                                        <TextBlock 
+                                            Text="{Binding ElementName=placeholder, 
+                                                Path=AdornedElement.(Controls:ValidationScope.ElementValidationResult).Result.Message}" 
+                                            TextWrapping="Wrap"
+                                            />
+                                    </DockPanel>
+                                </Border>
+                            </Popup>
+                            <Controls:AdornedElementPlaceholderExtended x:Name="placeholder" />
+                        </DockPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Controls:ValidationScope.IsValid" Value="False">
+                    <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Controls:ValidationScope.ElementValidationResult).Result.Message}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="TabItem" x:Key="TabItemWithErrorRollup">
+            <Setter Property="HeaderTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <DockPanel>
+                            <Border ClipToBounds="False" IsEnabled="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=TabItem}, Path=Content.ValidationResult.WasSuccessful}" DockPanel.Dock="Right" Background="Pink" BorderBrush="Red" BorderThickness="1" Margin="10,-1,-6,-6" Width="20" Padding="0" CornerRadius="2">
+                                <TextBlock 
+                                    Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=TabItem}, Path=Content.ValidationResult.ResultsCount.Current}"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    />
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Style.Triggers>
+                                            <Trigger Value="False" Property="IsEnabled">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </Trigger>
+                                            <Trigger Value="True" Property="IsEnabled">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                            </Border>
+                            <TextBlock Text="{Binding }" />
+                        </DockPanel>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Border" x:Key="ValidationGroupBorder">
+            <Setter Property="Visibility" Value="Collapsed" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="BorderBrush" Value="Pink" />
+            <Setter Property="CornerRadius" Value="3" />
+            <Setter Property="Margin" Value="-1" />
+            <Style.Triggers>
+                <Trigger Property="Controls:ValidationScope.IsValid" Value="False">
+                    <Setter Property="Visibility" Value="Visible" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <DockPanel Margin="10">
+        <Border Margin="10" DockPanel.Dock="Bottom" Width="100" HorizontalAlignment="Right">
+            <Button Content="Save" Click="SaveButton_Clicked" />
+        </Border>
+
+        <!-- 
+        Experiment with different settings for the ValidationMode property below.
+            - Automatic: Validation happens as soon as the control loads and any time a property changes or control loses focus.
+            - AutomaticAfterFocus: Validation only happens after a control has lost focus.
+            - AutomaticAfterManual: Validation only happens when they hit "Save", and automatic from then on.
+            - Manual: Validation only happens when they hit "Save".
+        -->
+        <Controls:ValidationScope x:Name="_validationScope" ValidationSource="{Binding }" ValidationTrigger="AutomaticAfterFocus">
+
+            <TabControl Margin="10">
+                <TabItem Header="Student Information" Style="{StaticResource TabItemWithErrorRollup}">
+                    <Controls:ValidationScope ValidationSource="{Binding }">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <!-- Labels -->
+                            <TextBlock Text="First Name: " Margin="3" Grid.Column="0" Grid.Row="0" />
+                            <TextBlock Text="Last Name: " Margin="3" Grid.Column="0" Grid.Row="1" />
+                            <TextBlock Text="Username: " Margin="3" Grid.Column="0" Grid.Row="2" />
+                            <TextBlock Text="Password: " Margin="3" Grid.Column="0" Grid.Row="3" />
+                            <TextBlock Text="Repeat Password: " Margin="3" Grid.Column="0" Grid.Row="4" />
+                            <TextBlock Text="Email Address: " Margin="3" Grid.Column="0" Grid.Row="5" />
+                            <TextBlock Text="Email Notifications: " Margin="3" Grid.Column="0" Grid.Row="6" />
+                            <TextBlock Text="Notes: " Margin="3" Grid.Column="0" Grid.Row="7" />
+
+                            <!-- Controls -->
+                            <TextBox Text="{Binding Path=FirstName, UpdateSourceTrigger=PropertyChanged}" Controls:ValidationScope.ValidateField="FirstName" Margin="3" Grid.Column="1" Grid.Row="0" />
+                            <TextBox Text="{Binding Path=LastName, UpdateSourceTrigger=PropertyChanged}" Controls:ValidationScope.ValidateField="LastName" Margin="3" Grid.Column="1" Grid.Row="1" />
+                            <TextBox Text="{Binding Path=Username, UpdateSourceTrigger=PropertyChanged}" Controls:ValidationScope.ValidateField="Username" Margin="3" Grid.Column="1" Grid.Row="2" />
+                            <TextBox Text="{Binding Path=Password, UpdateSourceTrigger=PropertyChanged}" Controls:ValidationScope.ValidateField="Password" Margin="3" Grid.Column="1" Grid.Row="3" />
+                            <TextBox Text="{Binding Path=RepeatPassword, UpdateSourceTrigger=PropertyChanged}" Controls:ValidationScope.ValidateField="RepeatPassword" Margin="3" Grid.Column="1" Grid.Row="4" />
+                            <TextBox Text="{Binding Path=EmailAddress, UpdateSourceTrigger=PropertyChanged}" Controls:ValidationScope.ValidateField="EmailAddress" Margin="3" Grid.Column="1" Grid.Row="5" />
+                            <CheckBox IsChecked="{Binding Path=EmailNotifications}"  Margin="3" Grid.Column="1" Grid.Row="6" />
+                            <TextBox Text="{Binding Path=Notes, UpdateSourceTrigger=PropertyChanged}" Controls:ValidationScope.ValidateField="Notes" Height="200" Margin="3" Grid.Column="1" Grid.Row="7" />
+
+                            <!-- Border covering both passwords (incase the passwords do not match) -->
+                            <Border Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Style="{StaticResource ValidationGroupBorder}" Controls:ValidationScope.ValidateField="PasswordsMatch">
+
+                            </Border>
+                        </Grid>
+                    </Controls:ValidationScope>
+                </TabItem>
+                <TabItem Header="Course Selection" Style="{StaticResource TabItemWithErrorRollup}" Extensions:ItemsControlExtensions.CreateTemplatesOnLoad="True">
+                    <Controls:ValidationScope ValidationSource="{Binding }" Extensions:ItemsControlExtensions.CreateTemplatesOnLoad="True">
+                        <DockPanel Margin="10">
+                            <TextBlock DockPanel.Dock="Top" Margin="10" Text="Select the courses this student will take this semester: " />
+
+                            <ItemsControl ItemsSource="{Binding Path=CourseGroups}" Margin="10" x:Name="_items" Extensions:ItemsControlExtensions.CreateTemplatesOnLoad="True">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Expander Header="{Binding Path=GroupName}" IsExpanded="True">
+                                            <Controls:ValidationScope ValidationSource="{Binding}" Extensions:ItemsControlExtensions.CreateTemplatesOnLoad="True">
+                                                <StackPanel>
+                                                    <Border Style="{StaticResource ValidationGroupBorder}" Controls:ValidationScope.ValidateField="TooManyCoursesSelected">
+                                                        <TextBlock Text="Too many courses selected." />
+                                                    </Border>
+
+                                                    <ItemsControl ItemsSource="{Binding Path=Courses}" Extensions:ItemsControlExtensions.CreateTemplatesOnLoad="True">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <CheckBox 
+                                                                Margin="20,2" 
+                                                                Content="{Binding Path=CourseName}" 
+                                                                IsChecked="{Binding Path=Taken}" 
+                                                                Controls:ValidationScope.ValidateField="Taken"
+                                                                />
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                </StackPanel>
+                                            </Controls:ValidationScope>
+                                        </Expander>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </DockPanel>
+                    </Controls:ValidationScope>
+                </TabItem>
+                <TabItem Header="Friends" Style="{StaticResource TabItemWithErrorRollup}" Extensions:ItemsControlExtensions.CreateTemplatesOnLoad="True">
+                    <Controls:ValidationScope ValidationSource="{Binding }" Extensions:ItemsControlExtensions.CreateTemplatesOnLoad="True">
+                        <DockPanel Margin="10">
+                            <TextBlock DockPanel.Dock="Top" Margin="10" Text="Maintain the student's best friends: " />
+                            <Button DockPanel.Dock="Top" Content="Add" Width="100" Click="AddFriendButton_Clicked" />
+
+                            <ItemsControl ItemsSource="{Binding Path=BestFriends}" Margin="10" Extensions:ItemsControlExtensions.CreateTemplatesOnLoad="True">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Controls:ValidationScope ValidationSource="{Binding}" Extensions:ItemsControlExtensions.CreateTemplatesOnLoad="True">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Name: " Margin="3" />
+                                                <TextBox Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" Margin="3" Controls:ValidationScope.ValidateField="Name" Width="300" />
+                                                <TextBlock Text="Age: " Margin="3" />
+                                                <TextBox Text="{Binding Path=Age, UpdateSourceTrigger=PropertyChanged}" Margin="3" Controls:ValidationScope.ValidateField="Age" Width="200" />
+                                                <Button Click="DeleteFriendButton_Clicked" Content="Delete"  />
+                                            </StackPanel>
+                                        </Controls:ValidationScope>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </DockPanel>
+                    </Controls:ValidationScope>
+                </TabItem>
+                <TabItem Header="Sample Notes">
+
+                </TabItem>
+            </TabControl>
+
+        </Controls:ValidationScope>
+
+    </DockPanel>
+</Window>

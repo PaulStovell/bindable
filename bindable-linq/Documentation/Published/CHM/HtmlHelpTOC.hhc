@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY >
+<OBJECT type="text/site properties">
+	<param name="Auto Generated" value="No">
+	<param name="Font" value="Segoe UI,9,0">
+</OBJECT>
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+<style type="text/css">
+
+	body { font-family: segoe UI; }
+</style>
+</HEAD><BODY >
+<OBJECT type="text/site properties">
+	<param name="Auto Generated" value="No">
+</OBJECT>
+
+<UL>
+	<LI style='font-family: segoe ui'> <OBJECT type="text/sitemap">
+			<param name="Name" value="Introduction">
+			<param name="Local" value="Index.html">
+			</OBJECT>
+	
+	<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Getting Started">
+			<param name="Local" value="1_QuickStarts/GettingStarted.html">
+			</OBJECT>
+	
+	
+	<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Design Concepts">
+			<param name="Local" value="2_DesignConcepts/Overview.html">
+			</OBJECT>
+		<UL>
+			
+			<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Background">
+					<param name="Local" value="2_DesignConcepts/BindableLINQOverview/Overview.html">
+				 </OBJECT>
+			    <UL>
+					<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Reactive Programming">
+							<param name="Local" value="2_DesignConcepts/BindableLINQOverview/ReactiveProgramming.html">
+						 </OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Data Binding">
+							<param name="Local" value="2_DesignConcepts/BindableLINQOverview/DataBinding.html">
+						 </OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="LINQ">
+							<param name="Local" value="2_DesignConcepts/BindableLINQOverview/LINQ.html">
+						 </OBJECT>
+			 	</UL>
+			<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Bindable LINQ">
+					<param name="Local" value="2_DesignConcepts/BindableLINQDetails/Overview.html">
+				 </OBJECT>
+			    <UL>
+					<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Platform Support">
+							<param name="Local" value="2_DesignConcepts/BindableLINQDetails/Platforms.html">
+						 </OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Query Dependencies">
+							<param name="Local" value="2_DesignConcepts/BindableLINQDetails/Dependencies.html">
+						 </OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="List of Supported LINQ Syntax">
+							<param name="Local" value="2_DesignConcepts/BindableLINQDetails/ListOfSupportedQueries.html">
+						 </OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Application Patterns">
+							<param name="Local" value="2_DesignConcepts/BindableLINQDetails/BindableLINQPatterns.html">
+						 </OBJECT>
+			 	</UL>
+		</UL>
+		
+		
+	<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="F.A.Q.">
+			<param name="Local" value="3_FAQ/FAQ.html">
+			</OBJECT>
+			
+	<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Examples">
+			<param name="Local" value="4_QueryExamples/Overview.html">
+			</OBJECT>
+			
+	<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Sample Applications">
+			<param name="Local" value="5_SampleApplications/Overview.html">
+			</OBJECT>
+			
+	<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Implementation">
+			<param name="Local" value="6_Implementation/Overview.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Building">
+					<param name="Local" value="6_Implementation/Building.html">
+				 </OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="History">
+					<param name="Local" value="6_Implementation/History.html">
+				 </OBJECT>
+		</UL>
+		
+	<LI style='font-family: segoe ui'> <OBJECT type="text/sitemap">
+			<param name="Name" value="License">
+			<param name="Local" value="License.html">
+			</OBJECT>
+
+</UL>
+</BODY></HTML>
+
+
+</BODY></HTML>

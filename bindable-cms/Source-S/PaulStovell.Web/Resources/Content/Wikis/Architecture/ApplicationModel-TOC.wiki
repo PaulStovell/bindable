@@ -1,0 +1,23 @@
+﻿
+
+    - Vision statement 
+    - Ubiquitous Language 
+    - Patterns 
+    - Common services and infrastructure 
+    - - Messages 
+    - - Tracing 
+    - - Windowing 
+    - - Progress indication 
+    - - Event broadcasting 
+    - - Caching 
+    - - Service location 
+    - - Context sensitive help
+    - Framework 
+    - - Reusable base classes, helpers, wrappers, components
+    - Security model 
+    - DSL's and abstractions over common tasks 
+    - Composition model 
+    - Coding standards, XAML standards, consistency themes 
+    - VS solution structure 
+    - Source control structure
+

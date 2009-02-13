@@ -1,0 +1,19 @@
+﻿
+    - Solution overview 
+    - Physical/logical design 
+    - Application-wide Patterns 
+    - Problem domain overviews 
+    - Extensibility requirements 
+    - Patterns Catalog 
+    - Integration Points 
+    - Thread boundaries 
+    - Process boundaries 
+    - Security and trust boundaries 
+    - Performance requirements 
+    - Caching requirements 
+    - Localization strategy 
+    - Data concurrency strategies 
+    - Exception reporting strategies 
+    - Health monitoring strategy 
+    - [SolutionDesign-ThirdParty|Third party evaluation/build vs. buy]
+

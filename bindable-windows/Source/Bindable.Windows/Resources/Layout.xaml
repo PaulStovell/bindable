@@ -1,0 +1,43 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    >
+    <!-- 
+    The values from this resource dictionary have been taken from the Windows Vista User Experience Guidelines, from 
+    the section on Layout. More information can be found here: http://msdn.microsoft.com/en-us/library/aa511279.aspx
+    -->
+    <sys:Double x:Key="Layout_ControlButtonWidth">75</sys:Double>
+    <sys:Double x:Key="Layout_ControlButtonHeight">23</sys:Double>
+    <sys:Double x:Key="Layout_ControlCheckBoxWidth">17</sys:Double>
+    <sys:Double x:Key="Layout_ControlCheckBoxHeight">17</sys:Double>
+    <sys:Double x:Key="Layout_ControlComboBoxHeight">23</sys:Double>
+    <sys:Double x:Key="Layout_ControlCommandLinkOneLineHeight">41</sys:Double>
+    <sys:Double x:Key="Layout_ControlCommandLinkTwoLineHeight">58</sys:Double>
+    <sys:Double x:Key="Layout_ControlProgressBarWidthShort">160</sys:Double>
+    <sys:Double x:Key="Layout_ControlProgressBarWidthLong">355</sys:Double>
+    <sys:Double x:Key="Layout_ControlProgressBarHeight">15</sys:Double>
+    <sys:Double x:Key="Layout_ControlRadioButtonWidth">17</sys:Double>
+    <sys:Double x:Key="Layout_ControlRadioButtonHeight">17</sys:Double>
+    <sys:Double x:Key="Layout_ControlTextBoxHeight">23</sys:Double>
+
+    <Thickness x:Key="Layout_SpacingBetweenDialogAndContents">11</Thickness>
+    <Thickness x:Key="Layout_SpacingBetweenDialogAndContentsSplit">5.5</Thickness>
+    <Thickness x:Key="Layout_SpacingBetweenLabelsAndControlsFromAbove">5</Thickness>
+    <Thickness x:Key="Layout_SpacingBetweenLabelsAndControlsFromAboveSplit">2.5</Thickness>
+    <Thickness x:Key="Layout_SpacingBetweenRelatedControlsVertical">7</Thickness>
+    <Thickness x:Key="Layout_SpacingBetweenRelatedControlsVerticalSplit">3.5</Thickness>
+    <Thickness x:Key="Layout_SpacingBetweenUnrelatedControlsVertical">11</Thickness>
+    <Thickness x:Key="Layout_SpacingBetweenUnrelatedControlsVerticalSplit">5.5</Thickness>
+    <Thickness x:Key="Layout_SpacingBetweenControlsWithinGroupBoxVertical">7</Thickness>
+    <Thickness x:Key="Layout_SpacingBetweenControlsWithinGroupBoxVerticalSplit">3.5</Thickness>
+    <Thickness x:Key="Layout_SpacingBetweenHorizontallyOrVerticallyArangedButtons">7</Thickness>
+    <Thickness x:Key="Layout_SpacingBetweenHorizontallyOrVerticallyArangedButtonsSplit">3.5</Thickness>
+    <Thickness x:Key="Layout_SpacingBetweenParagraphsOfText">11</Thickness>
+    <Thickness x:Key="Layout_SpacingBetweenParagraphsOfTextSplit">5.5</Thickness>
+
+    <HorizontalAlignment x:Key="Layout_FieldLabelHorizontalAlignment">Left</HorizontalAlignment>
+    <HorizontalAlignment x:Key="Layout_FieldValueHorizontalAlignment">Left</HorizontalAlignment>
+    <VerticalAlignment x:Key="Layout_FieldLabelVerticalAlignment">Center</VerticalAlignment>
+    <VerticalAlignment x:Key="Layout_FieldValueVerticalAlignment">Center</VerticalAlignment>
+</ResourceDictionary>

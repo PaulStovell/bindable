@@ -1,0 +1,100 @@
+﻿<UserControl 
+    x:Class="Bindable.Windows.ValidationSamples.Views.BookingCreation.BookingCreationView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Bindable="http://schemas.bindable.net/2008/windows"
+    >
+    <Grid>
+        <TabControl>
+            <TabItem Header="Traveller Information">
+                <Bindable:Form>
+                    <Bindable:FormHeader Title="Traveller Information" />
+                    <Bindable:FormBody>
+                        <UniformGrid Columns="2">
+                            <Bindable:FormField Header="Name:">
+                                <TextBox />
+                            </Bindable:FormField>
+                            <Bindable:FormField Header="E-mail Address:">
+                                <TextBox />
+                            </Bindable:FormField>
+                            <Bindable:FormField Header="Phone Number:">
+                                <TextBox />
+                            </Bindable:FormField>
+                            <Bindable:FormField Header="Cost Centre:">
+                                <ComboBox />
+                            </Bindable:FormField>
+                        </UniformGrid>
+                    </Bindable:FormBody>
+                </Bindable:Form>
+            </TabItem>
+            <TabItem Header="Trip">
+                <Bindable:Form>
+                    <Bindable:FormHeader Title="Trip" />
+                    <Bindable:FormBody>
+                        <ListBox>
+                            
+                        </ListBox>
+                    </Bindable:FormBody>
+                </Bindable:Form>
+            </TabItem>
+            <TabItem Header="Preferences">
+                <Bindable:Form>
+                    <Bindable:FormHeader Title="Trip" />
+                    <Bindable:FormBody>
+                        <FlowDocumentScrollViewer>
+                            <FlowDocument>
+                                <Paragraph>
+                                    Hello
+                                </Paragraph>
+                            </FlowDocument>
+                        </FlowDocumentScrollViewer>
+
+                        <Bindable:Form>
+                            <Bindable:FormBody>
+                                <UniformGrid Columns="2">
+                                    <Bindable:FormField Header="From:">
+                                        <TextBox />
+                                    </Bindable:FormField>
+                                    <Bindable:FormField Header="To:">
+                                        <TextBox />
+                                    </Bindable:FormField>
+                                </UniformGrid>
+                                <UniformGrid Columns="2">
+                                    <Bindable:FormField Header="Departure Date:">
+                                        <TextBox />
+                                    </Bindable:FormField>
+                                    <Bindable:FormField Header="Departure Time:">
+                                        <TextBox />
+                                    </Bindable:FormField>
+                                </UniformGrid>
+                            </Bindable:FormBody>
+                        </Bindable:Form>
+                        <ListBox>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Border>
+                                    </Border>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Bindable:FormBody>
+                </Bindable:Form>
+            </TabItem>
+            <TabItem Header="Submit">
+                <StackPanel>
+                    <GroupBox Header="Terms and Conditions">
+                        <FlowDocumentScrollViewer VerticalScrollBarVisibility="Hidden">
+                            <FlowDocument>
+                                <Paragraph>
+                                    We take no responsibility...
+                                </Paragraph>
+                            </FlowDocument>
+                        </FlowDocumentScrollViewer>
+                    </GroupBox>
+                    <CheckBox Content="I accept the terms and conditions" />
+                    <Button Content="Submit" />
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

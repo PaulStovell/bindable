@@ -1,0 +1,31 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:Bindable.Windows.Controls"
+    xmlns:Extensions="clr-namespace:Bindable.Windows.Extensions"
+    xmlns:ValidationProviders="clr-namespace:Bindable.Windows.Controls.ValidationProviders"
+    xmlns:ValidationDisplayStrategies="clr-namespace:Bindable.Windows.Controls.ValidationDisplayStrategies"
+    >
+
+    <ValidationProviders:AutomaticValidationProvider x:Key="Local_DefaultValidationProviders" x:Shared="False">
+        <ValidationProviders:DataErrorInfoValidationProvider />
+        <ValidationProviders:ValidatableValidationProvider />
+    </ValidationProviders:AutomaticValidationProvider>
+
+    <Style TargetType="Controls:ValidationScope" x:Key="ValidationScope_Default">
+        <Setter Property="ValidationDisplayStrategy">
+            <Setter.Value>
+                <ValidationDisplayStrategies:WpfValidationDisplayStrategy />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ValidationProvider" Value="{StaticResource Local_DefaultValidationProviders}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Controls:ValidationScope">
+                    <ContentPresenter />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

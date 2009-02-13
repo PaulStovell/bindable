@@ -1,0 +1,30 @@
+﻿[Title]$Entry.Wiki.Name - $Entry.Title[/Title]
+
+[Introduction]
+    <h2>Summary</h2>
+    <p>
+        ${Entry.Summary}
+    </p>
+[/Introduction]
+
+[Content]
+    <p>
+  #if ($Entry.Parent)
+      <strong>
+        Back to: TODO
+      </strong>
+  #end
+    </p>
+    <h1>$Entry.Title</h1>
+    $Html.Textilize($Entry.Wiki.Name, $Entry.LatestRevision.Body)
+    <p>
+  #if ($Entry.Parent)
+      <strong>
+        Back to: TODO
+      </strong>
+  #end
+    </p>
+    
+    $Html.RenderView("Partials/Discussion")
+    
+[/Content]

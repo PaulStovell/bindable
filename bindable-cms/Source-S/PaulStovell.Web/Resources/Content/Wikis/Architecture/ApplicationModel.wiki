@@ -1,0 +1,19 @@
+﻿[Summary]
+    This wiki captures a collaborative approach to application design and architecture, with a focus on Windows Client  
+    applications. The table of contents is presented below, and you can follow the links of any of the entries to see 
+    more details. If you have any suggestions or feedback, please don't heasitate to leave a comment.
+[/Summary]
+
+[Title: Application Model]
+    
+    This stage takes the goals and requirements that arise from the solution design process - such as the necessity for 
+    modular applications, or the need for localization - and designs the solutions for them. This stage should focus on themes 
+    that affect the application as a whole, rather than specific features. In the end, the design for a lightweight framework 
+    should emerge. Once the ubiquitous language has been decided, this is the time to open Visual Studio and prototype like 
+    mad. 
+
+    In an Agile process, I'd suggest only picking features and areas that are known to be in the features for the current 
+    iteration. 
+
+    [Include: ApplicationModel-TOC]
+

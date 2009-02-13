@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindable.DatabaseManagement", "..\..\bindable-core\Source\Bindable.DatabaseManagement\Bindable.DatabaseManagement.csproj", "{DCA80C9A-515E-4462-AA57-941800885995}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindable.Core", "..\..\bindable-core\Source\Bindable.Core\Bindable.Core.csproj", "{6EB498B0-4DFA-45B2-9420-532C4D7B0410}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindable.Aspects", "..\..\bindable-core\Source\Bindable.Aspects\Bindable.Aspects.csproj", "{29AAF238-E9A9-4F5D-B440-FB162ED77207}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{6CA4DB0B-DE04-4C91-9B44-44425380D17F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindable.Cms.Database", "Bindable.Cms.Database\Bindable.Cms.Database.csproj", "{BB858A18-8FFA-46B6-A046-CA7794AA7605}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindable.Cms.Domain", "Bindable.Cms.Domain\Bindable.Cms.Domain.csproj", "{3385F20E-0278-4129-925C-C0A06CEC01DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindable.Cms.Web", "Bindable.Cms.Web\Bindable.Cms.Web.csproj", "{58F36C92-D3AF-435D-A699-95F394093E04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindable.Cms.Tests", "Bindable.Cms.Tests\Bindable.Cms.Tests.csproj", "{224D1F2C-B97B-4D33-9311-38F6DE0042B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCA80C9A-515E-4462-AA57-941800885995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCA80C9A-515E-4462-AA57-941800885995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCA80C9A-515E-4462-AA57-941800885995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCA80C9A-515E-4462-AA57-941800885995}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EB498B0-4DFA-45B2-9420-532C4D7B0410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EB498B0-4DFA-45B2-9420-532C4D7B0410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EB498B0-4DFA-45B2-9420-532C4D7B0410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EB498B0-4DFA-45B2-9420-532C4D7B0410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29AAF238-E9A9-4F5D-B440-FB162ED77207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29AAF238-E9A9-4F5D-B440-FB162ED77207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29AAF238-E9A9-4F5D-B440-FB162ED77207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29AAF238-E9A9-4F5D-B440-FB162ED77207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB858A18-8FFA-46B6-A046-CA7794AA7605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB858A18-8FFA-46B6-A046-CA7794AA7605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB858A18-8FFA-46B6-A046-CA7794AA7605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB858A18-8FFA-46B6-A046-CA7794AA7605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3385F20E-0278-4129-925C-C0A06CEC01DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3385F20E-0278-4129-925C-C0A06CEC01DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3385F20E-0278-4129-925C-C0A06CEC01DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3385F20E-0278-4129-925C-C0A06CEC01DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58F36C92-D3AF-435D-A699-95F394093E04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58F36C92-D3AF-435D-A699-95F394093E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58F36C92-D3AF-435D-A699-95F394093E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58F36C92-D3AF-435D-A699-95F394093E04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{224D1F2C-B97B-4D33-9311-38F6DE0042B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{224D1F2C-B97B-4D33-9311-38F6DE0042B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{224D1F2C-B97B-4D33-9311-38F6DE0042B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{224D1F2C-B97B-4D33-9311-38F6DE0042B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6EB498B0-4DFA-45B2-9420-532C4D7B0410} = {6CA4DB0B-DE04-4C91-9B44-44425380D17F}
+		{29AAF238-E9A9-4F5D-B440-FB162ED77207} = {6CA4DB0B-DE04-4C91-9B44-44425380D17F}
+		{DCA80C9A-515E-4462-AA57-941800885995} = {6CA4DB0B-DE04-4C91-9B44-44425380D17F}
+	EndGlobalSection
+EndGlobal

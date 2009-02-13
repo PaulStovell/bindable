@@ -1,0 +1,23 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:Bindable.Windows.Controls"
+    >
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Borders.xaml" />
+        <ResourceDictionary Source="Brushes.xaml" />
+        <ResourceDictionary Source="ComboBoxes.xaml" />
+        <ResourceDictionary Source="Converters.xaml" />
+        <ResourceDictionary Source="Forms.xaml" />
+        <ResourceDictionary Source="Layout.xaml" />
+        <ResourceDictionary Source="Panels.xaml" />
+        <ResourceDictionary Source="TabControls.xaml" />
+        <ResourceDictionary Source="TextBoxes.xaml" />
+        <ResourceDictionary Source="ValidationScope.xaml" />
+        <ResourceDictionary Source="Windows.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type Controls:Form}" BasedOn="{StaticResource Form_OfficeFormStyle}" />
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource TextBox_OfficeStandard}" />
+    
+</ResourceDictionary>

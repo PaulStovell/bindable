@@ -1,0 +1,20 @@
+﻿[Summary]
+    This wiki captures a collaborative approach to application design and architecture, with a focus on Windows Client  
+    applications. The table of contents is presented below, and you can follow the links of any of the entries to see 
+    more details. If you have any suggestions or feedback, please don't heasitate to leave a comment.
+[/Summary]
+
+[Title: Domain Model]
+
+    This stage is performed concurrently with the application model, with the two feeding into each other. Until the View 
+    Specification Process is completed, I'd recommend that this stick to small sketches and conceptual models and lists of 
+    services, rather than a thorough implementation, as it's likely that UI implementation requirements will have an effect 
+    on the intricacies of the domain model. 
+    
+    Also note that it is often fine, and in some cases desired, that an application may have multiple seperate domain models. 
+    
+    Following an Agile process, the entities modelled in this process should at most only model the objects in the current 
+    iteration and possibly the next. 
+    
+    [Include: DomainModel-TOC]
+

@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="generator" content="Fog Creek CityDesk 2.0.27" />
+<meta name="citydesk" content="AF0A0761/38" />
+<title>Bindable LINQ - Dependencies</title>
+	<style type="text/css">
+	body {
+		background-color: #fff;
+		font: 10pt segoe UI, arial, tahoma, arial, sans-serif;
+	}
+
+	h1 {
+		font: bold 18pt "Cambria","Segoe UI",Arial;
+		margin: 0px;
+	}
+	h2 {
+		font-size: 12pt;
+		font-weight: bold;
+	}
+	h3 {
+		font-size: 11pt;
+		font-weight: bold;
+	}
+	h4, h5 {
+		font-size: 10pt;
+		font-weight: bold;
+	}
+	
+	#container
+	{
+		width: 90%;
+		margin: 10px auto;
+		background-color: #fff;
+		color: #333;
+		border: 1px solid #009900;
+		line-height: 130%;
+	}
+	
+	#top
+	{
+		padding: .5em;
+		background-color: #F3F6EC;
+		border-bottom: 1px solid #009900;
+	}
+	
+	#top h1
+	{
+		padding: 0;
+		margin: 0;
+	}
+	
+	#leftnav
+	{
+		float: left;
+		width: 250px;
+		margin: 0;
+		padding: 10px;
+	}
+	
+	#content
+	{
+		margin-left: 300px;
+		border-left: 1px solid #009900;
+		padding: 10px;
+	}
+	
+	#footer
+	{
+		clear: both;
+		margin: 0;
+		padding: .5em;
+		color: #333;
+		background-color: #F3F6EC;
+		border-top: 1px solid #009900;
+	}
+	
+	a 
+	{
+		color:#105CB6;
+		text-decoration:underline;
+	}
+	
+	#content p { line-height: 150%; }
+
+	</style>
+</head>
+<body>
+
+	<div id="container">
+		<div id="top">
+			<h1><a href="../../Index.html">Bindable LINQ</a></h1>
+			<h2>Reactive Programming for the .NET Framework</h2>
+		</div>
+		
+		<div id="leftnav">
+			<p>
+			<ul>
+				<li><a href="../../Index.html">Introduction</a></li>
+				<li><a href="../../1_QuickStarts/GettingStarted.html">Getting Started</a></li>
+				<li><a href="../Overview.html">Design Concepts</a></li>
+				<ul>
+					<li><a href="../../2_DesignConcepts/BindableLINQOverview/Overview.html">Background</a></li>
+					<ul>
+						<li><a href="../../2_DesignConcepts/BindableLINQOverview/ReactiveProgramming.html">Reactive Programming</a></li>
+						<li><a href="../../2_DesignConcepts/BindableLINQOverview/DataBinding.html">Data Binding</a></li>
+						<li><a href="../../2_DesignConcepts/BindableLINQOverview/LINQ.html">LINQ</a></li>
+					</ul>
+				</ul>
+				<ul>
+					<li><a href="Overview.html">Bindable LINQ</a></li>
+					<ul>
+						<li><a href="Platforms.html">Platform Support</a></li>
+						<li><a href="Dependencies.html">Query Dependencies</a></li>
+						<li><a href="ListOfSupportedQueries.html">List of Supported LINQ Syntax</a></li>
+						<li><a href="BindableLINQPatterns.html">Application Patterns</a></li>
+					</ul>
+				</ul>
+				<li><a href="../../3_FAQ/FAQ.html">FAQ</a></li>
+				<li><a href="../../4_QueryExamples/Overview.html">Examples</a></li>
+				<li><a href="../../5_SampleApplications/Overview.html">Sample Applications</a></li>
+				<li><a href="../../6_Implementation/Overview.html">Implementation</a></li>
+				<li><a href="../../License.html">License</a></li>
+			</ul>
+			</p>
+		</div>
+	
+		<div id="content">
+	
+			
+			<div>
+				<h1>Dependencies</h1>
+			</div>
+			
+		
+			<p>Bindable LINQ enables propagation of change by monitoring various <em>dependencies</em> on the query. This page details the different kinds of dependencies that are available in Bindable LINQ.</p>
+<h2>Source Dependencies</h2>
+<p>All queries have either a source collection or item that may raise events indicating changes. For <a href="Overview.html">iterators</a>&nbsp;and <a href="Overview.html">aggregators</a>, if a source collection implements the INotifyCollectionChanged or IBindingList interfaces, Bindable LINQ will automatically monitor the source collection for changes. For <a href="Overview.html">operators</a>, the INotifyPropertyChanged interface will be monitored.</p>
+<p>In most cases, Bindable LINQ is smart enough to do the minimum amount of work possible per change notification. For instance, if an item is added to a source collection, a Bindable LINQ <em>Where</em> query will receive the <em>Add</em> event, and will filter only the changed item - not the entire result set. In some cases, such as <em>Reset</em> events, the entire collection will be re-evaluated.</p><h2>Automatic Dependency Discovery</h2>
+<p>Many Bindable LINQ queries, such as <em>Where, Select</em> and <em>OrderBy</em>, take lambda expressions as parameters, which are usually quite important to the results of the query. In these cases, Bindable LINQ will automatically parse the expression tree and discover additional dependencies. For example, in the following query:</p>
+<pre>
+var query = contacts.Where(c =&gt; c.Name.Contains(textBox1.Text));
+</pre>
+<p>The <em>Name</em> property of each contact item, and the <em>Text</em> property of <em>TextBox1</em>, are important to this query. Bindable LINQ will detect this and set up dependencies on these two properties. If the Name of an item changes, the item will be re-filtered. If the Text of the TextBox changes, the entire result set will re-evaluate.</p>
+<p>Dependencies discovered in the lamda expressions can be broken into two categories:</p>
+<ul>
+<li>Item dependencies, which rely on one or more properties on an item in the source collection/source item. These changes will only affect the item raising the event.
+</li>
+<li>External dependencies, which rely on objects not owned by the query. These changes will cause the entire query to be re-evaluated.
+</li>
+</ul>
+<p>This expression tree analysis is usually quite fast, but it can cause unintended side effects, and it may be faster to skip. To this end, each query which conducts automatic dependency discovery provides an overload which enables you to disable automatic dependency discovery:</p>
+<pre>
+var query = contacts.Where(c =&gt; c.Name.Contains(textBox1.Text), DependencyDiscovery.Disabled);
+</pre>
+
+<h2>Manual Dependencies</h2>
+<p>Some queries may not reference an external item, but may still have dependencies on external items. These dependencies can be added manually using the DependsOn extension methods. This can also be useful if automatic dependency discovery is disabled.</p>
+<pre>
+var query = contacts.Where(c =&gt; c.Name.Contains(textBox1.Text), DependencyDiscovery.Disabled)
+                    .DependsOn("Name")
+                    .DependsOn(textBox1, TextBox.TextProperty);</pre>
+		</div>
+	
+		<div id="footer">More Links</div>
+	</div>
+</body>
+</html>

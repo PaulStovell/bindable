@@ -1,0 +1,9 @@
+﻿
+    - Personas
+    - Contexts
+    - Goals
+    - Scenarios
+    - Current processes
+    - Paper workflows/compensation strategies
+    - Environment considerations
+

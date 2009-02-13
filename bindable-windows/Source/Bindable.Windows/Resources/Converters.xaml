@@ -1,0 +1,7 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Converters1="clr-namespace:Bindable.Windows.Converters"
+    >
+    <Converters1:StringFormatMultiConverter x:Key="RapidXaml_StringFormatMultiConverter" />
+</ResourceDictionary>

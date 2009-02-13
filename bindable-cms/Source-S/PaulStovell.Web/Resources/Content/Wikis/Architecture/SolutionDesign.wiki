@@ -1,0 +1,18 @@
+﻿[Summary]
+    This wiki captures a collaborative approach to application design and architecture, with a focus on Windows Client  
+    applications. The table of contents is presented below, and you can follow the links of any of the entries to see 
+    more details. If you have any suggestions or feedback, please don't heasitate to leave a comment.
+[/Summary]
+
+[Title: Solution Design]
+
+    The interaction design has now dictated what the end product will be look like, and the solution design document will 
+    outline how it will be built. This stage should focus on higher level trends and common themes in the application - will 
+    it be modular, will it use a lot of background threads, will it interact with many web services. The goal is to capture 
+    these requirements and gauge the solutions, without designing the solutions in depth (UML diagrams or code are way too 
+    low-level at this point).
+
+    This stage is primarily in the domain of architects. 
+
+    [Include: SolutionDesign-TOC]
+

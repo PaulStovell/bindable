@@ -1,0 +1,16 @@
+﻿[Summary]
+    This wiki captures a collaborative approach to application design and architecture, with a focus on Windows Client  
+    applications. The table of contents is presented below, and you can follow the links of any of the entries to see 
+    more details. If you have any suggestions or feedback, please don't heasitate to leave a comment.
+[/Summary]
+
+[Title: Solution Design Requirements]
+
+    This stage is owned by business analysts and centers around capturing the requirements, histories, experiences 
+    and processes of the users of the systems and their expectations. While many ideas for solutions will arise at 
+    this time, it is important to capture the requirements at a higher level (the problem), rather than to dictate 
+    how a screen or view should look (a solution). Interaction Designers and architects should be involved during 
+    this process to ensure all of their requirements are fulfilled. 
+
+    [Include: Requirements-TOC]
+

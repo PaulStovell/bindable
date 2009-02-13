@@ -1,0 +1,13 @@
+﻿[Summary]
+    This wiki captures a collaborative approach to application design and architecture, with a focus on Windows Client  
+    applications. The table of contents is presented below, and you can follow the links of any of the entries to see 
+    more details. If you have any suggestions or feedback, please don't heasitate to leave a comment.
+[/Summary]
+
+[Title: Project Planning]
+
+    Many of these tasks will be dictated by project managers and stakeholders, but at a minimum, we should be 
+    aware of:
+    
+    [Include: Planning-TOC]
+

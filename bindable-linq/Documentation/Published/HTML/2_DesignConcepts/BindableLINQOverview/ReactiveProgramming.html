@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="generator" content="Fog Creek CityDesk 2.0.27" />
+<meta name="citydesk" content="AF0A0761/15" />
+<title>Bindable LINQ - Reactive Programming</title>
+	<style type="text/css">
+	body {
+		background-color: #fff;
+		font: 10pt segoe UI, arial, tahoma, arial, sans-serif;
+	}
+
+	h1 {
+		font: bold 18pt "Cambria","Segoe UI",Arial;
+		margin: 0px;
+	}
+	h2 {
+		font-size: 12pt;
+		font-weight: bold;
+	}
+	h3 {
+		font-size: 11pt;
+		font-weight: bold;
+	}
+	h4, h5 {
+		font-size: 10pt;
+		font-weight: bold;
+	}
+	
+	#container
+	{
+		width: 90%;
+		margin: 10px auto;
+		background-color: #fff;
+		color: #333;
+		border: 1px solid #009900;
+		line-height: 130%;
+	}
+	
+	#top
+	{
+		padding: .5em;
+		background-color: #F3F6EC;
+		border-bottom: 1px solid #009900;
+	}
+	
+	#top h1
+	{
+		padding: 0;
+		margin: 0;
+	}
+	
+	#leftnav
+	{
+		float: left;
+		width: 250px;
+		margin: 0;
+		padding: 10px;
+	}
+	
+	#content
+	{
+		margin-left: 300px;
+		border-left: 1px solid #009900;
+		padding: 10px;
+	}
+	
+	#footer
+	{
+		clear: both;
+		margin: 0;
+		padding: .5em;
+		color: #333;
+		background-color: #F3F6EC;
+		border-top: 1px solid #009900;
+	}
+	
+	a 
+	{
+		color:#105CB6;
+		text-decoration:underline;
+	}
+	
+	#content p { line-height: 150%; }
+
+	</style>
+</head>
+<body>
+
+	<div id="container">
+		<div id="top">
+			<h1><a href="../../Index.html">Bindable LINQ</a></h1>
+			<h2>Reactive Programming for the .NET Framework</h2>
+		</div>
+		
+		<div id="leftnav">
+			<p>
+			<ul>
+				<li><a href="../../Index.html">Introduction</a></li>
+				<li><a href="../../1_QuickStarts/GettingStarted.html">Getting Started</a></li>
+				<li><a href="../Overview.html">Design Concepts</a></li>
+				<ul>
+					<li><a href="Overview.html">Background</a></li>
+					<ul>
+						<li><a href="ReactiveProgramming.html">Reactive Programming</a></li>
+						<li><a href="DataBinding.html">Data Binding</a></li>
+						<li><a href="LINQ.html">LINQ</a></li>
+					</ul>
+				</ul>
+				<ul>
+					<li><a href="../../2_DesignConcepts/BindableLINQDetails/Overview.html">Bindable LINQ</a></li>
+					<ul>
+						<li><a href="../../2_DesignConcepts/BindableLINQDetails/Platforms.html">Platform Support</a></li>
+						<li><a href="../../2_DesignConcepts/BindableLINQDetails/Dependencies.html">Query Dependencies</a></li>
+						<li><a href="../../2_DesignConcepts/BindableLINQDetails/ListOfSupportedQueries.html">List of Supported LINQ Syntax</a></li>
+						<li><a href="../../2_DesignConcepts/BindableLINQDetails/BindableLINQPatterns.html">Application Patterns</a></li>
+					</ul>
+				</ul>
+				<li><a href="../../3_FAQ/FAQ.html">FAQ</a></li>
+				<li><a href="../../4_QueryExamples/Overview.html">Examples</a></li>
+				<li><a href="../../5_SampleApplications/Overview.html">Sample Applications</a></li>
+				<li><a href="../../6_Implementation/Overview.html">Implementation</a></li>
+				<li><a href="../../License.html">License</a></li>
+			</ul>
+			</p>
+		</div>
+	
+		<div id="content">
+	
+			
+			<div>
+				<h1>Reactive Programming</h1>
+			</div>
+			
+		
+			
+
+<p><strong><em>Reactive Programming</em></strong> is programming paradigm with a focus on automatic reactions to changes in data. While other programming paradigms, such as object oriented or functional programming, focus on <em>discreet evaluation</em> of code, the reactive programming paradigm instead focuses on <em>continuous evaluation,</em> and <em>propagation of change</em>.</p>
+<p>To understand the difference between discreet and continuous evaluation, consider the following familiar C# code:</p>
+
+<pre>
+decimal total = 0;
+IList&lt;LineItem&gt; lineItems = ...;
+foreach (var item in lineItems) 
+{
+    total += item.Quantity * item.Price;
+}
+</pre>
+
+<p>The value of the <strong>total</strong> is <em>derived</em> from the <strong>lineItems</strong> collection. But in this case, once the <em>foreach</em> loop has completed and the total variable assigned, this relationship is lost. If the lineItems collection, from which the total was derived from, changes, the total will not change. You can think think of this code as representing a "point-in-time" snapshot of the total.</p>
+
+<p>In a reactive programming language, the relationship between the source - lineItems - and the destination - total - should be maintained at all times, and changes to the source should be propagated.</p>
+
+<p>Bindable LINQ allows you to use the familiar syntax of LINQ queries in a reactive programming way. For example, the order totaling code above could be written in Bindable LINQ as:</p>
+
+<pre>
+ObservableCollection&lt;LineItem&gt; lineItems = ...;
+IBindable&lt;decimal&gt; total = lineItems.AsBindable().Sum(li =&gt; li.Quantity * li.Price);
+</pre>
+
+<p>Further reading:</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Reactive_programming" target="_blank">Reactive Programming</a> on Wikipedia</li>
+<li><a href="http://en.wikipedia.org/wiki/Functional_reactive_programming" target="_blank">Functional Reactive Programming</a> on Wikipedia</li>
+</ul>
+		</div>
+	
+		<div id="footer">More Links</div>
+	</div>
+</body>
+</html>

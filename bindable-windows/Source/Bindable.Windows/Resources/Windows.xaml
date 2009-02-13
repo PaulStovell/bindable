@@ -1,0 +1,26 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Extensions="clr-namespace:Bindable.Windows.Extensions"
+    >
+    
+    <!-- 
+    The style for the Main Window of the application.
+    -->
+    <Style x:Key="Window_OfficeMainWindow" TargetType="Window">
+        <Setter Property="Background" Value="{StaticResource Brush_OfficeMainWindowBackgroundBrush}" />
+        <!--<Setter Property="Extensions:AccessibilityExtensions.IsHighContrast" Value="{DynamicResource {x:Static SystemParameters.HighContrastKey}}" />-->
+        <!--<Style.Triggers>
+            <Trigger Property="Extensions:AccessibilityExtensions.IsHighContrast" Value="True">
+                <Setter Property="Background" Value="Black" />
+            </Trigger>
+        </Style.Triggers>-->
+    </Style>
+    
+    <Style x:Key="Window_OfficeDialogWindow" TargetType="Window">
+        <Setter Property="Background" Value="{DynamicResource Brush_OfficeDialogWindowBackgroundBrush}" />
+        <Setter Property="WindowStyle" Value="SingleBorderWindow" />
+        <Setter Property="ResizeMode" Value="CanResizeWithGrip" />
+    </Style>
+    
+</ResourceDictionary>

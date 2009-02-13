@@ -1,0 +1,21 @@
+C:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Aspects\obj\Debug\ResolveAssemblyReference.cache
+C:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Aspects\bin\Debug\Bindable.Aspects.dll
+C:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Aspects\bin\Debug\Bindable.Aspects.pdb
+C:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Aspects\bin\Debug\Bindable.Core.dll
+C:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Aspects\bin\Debug\PostSharp.Laos.dll
+C:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Aspects\bin\Debug\PostSharp.Public.dll
+C:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Aspects\bin\Debug\Bindable.Core.pdb
+C:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Aspects\obj\Debug\Bindable.Aspects.dll
+C:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Aspects\obj\Debug\Bindable.Aspects.pdb
+T:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Aspects\bin\Debug\Bindable.Aspects.dll
+T:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Aspects\bin\Debug\Bindable.Aspects.pdb
+T:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Aspects\bin\Debug\PostSharp.Laos.dll
+T:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Aspects\bin\Debug\PostSharp.Public.dll
+T:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Aspects\obj\Debug\ResolveAssemblyReference.cache
+T:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Aspects\obj\Debug\Bindable.Aspects.dll
+T:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Aspects\obj\Debug\Bindable.Aspects.pdb
+T:\Code\Personal\bindable\bindable-core\Source\Bindable.Aspects\bin\Debug\Bindable.Aspects.dll
+T:\Code\Personal\bindable\bindable-core\Source\Bindable.Aspects\bin\Debug\Bindable.Aspects.pdb
+T:\Code\Personal\bindable\bindable-core\Source\Bindable.Aspects\obj\Debug\ResolveAssemblyReference.cache
+T:\Code\Personal\bindable\bindable-core\Source\Bindable.Aspects\obj\Debug\Bindable.Aspects.dll
+T:\Code\Personal\bindable\bindable-core\Source\Bindable.Aspects\obj\Debug\Bindable.Aspects.pdb

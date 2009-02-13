@@ -1,0 +1,18 @@
+﻿[Summary]
+    This wiki captures a collaborative approach to application design and architecture, with a focus on Windows Client  
+    applications. The table of contents is presented below, and you can follow the links of any of the entries to see 
+    more details. If you have any suggestions or feedback, please don't heasitate to leave a comment.
+[/Summary]
+
+[Parent: Home]
+
+[Title: Vision and Scope]
+
+    This stage in the process involves nailing down the vision of the product being built and establishing 
+    a business case. This stage is best left to product managers, but from the point of view of developers, 
+    architects, business analysts and interaction designers, the following points should be covered and made 
+    available. I believe it is important for every member of the team to have a clear idea of the business 
+    case and goals of the product they work on. 
+
+    [Include: Vision-TOC]
+

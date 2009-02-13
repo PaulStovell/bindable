@@ -1,0 +1,22 @@
+﻿    
+    - Decomposition 
+    - What UI controls, styles, templates and graphics will it need? -> Work items -> Designers 
+    - What domain objects, services and integration points does it need? -> Work items -> Developers 
+    - Where else is the view used? 
+    - What is the lifestyle of the view? 
+    - - Single instance? 
+    - - Single instance per unique identity? 
+    - - Multiple instance?
+    - What is the lifecycle of the view? 
+    - - Save, Load, Close, Cancel, Undo changes, Refresh, Next, Back, Disposal
+    - What context ribbon tabs, menu items, status bar or toolbar items will it contribute? 
+    - What other views does it depend on? 
+    - - How will they communicate? 
+    - - - What events does it need to be aware of?
+    - Does it take part in any logical or technical transactions? 
+    - # What are the important test cases? 
+    - # What kinds of exceptions could come up/how should they be managed? 
+    - What are some good reference samples? 
+    - Prototype tricky bits 
+    - Responsibility identification (what should the view own, what should the model own, what should the domain model own?)
+

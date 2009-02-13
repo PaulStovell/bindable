@@ -1,0 +1,211 @@
+/*
+Document Level
+*/
+body, div, span, p, a, img, table, th, tr, td, form, fieldset, legend, dl, dt, dd, blockquote, applet, object
+{
+    border: 0;
+}
+body
+{
+    text-align: left;
+    background: none;
+}
+
+/*
+Layout
+*/
+
+    .layout
+    {
+        text-align: left;
+    }
+
+    /*
+    Header
+    */
+
+        .header
+        {
+            height: 95px;
+            margin: 0;
+            padding: 0;
+            background: none;
+        }
+        .header-in
+        {
+            margin: 0 auto;
+            width: auto;
+        }
+        .header img
+        {
+            float: left;
+            display: block;
+        }
+        .logo a:hover
+        {
+            color: #fff;
+        }
+        .header .title
+        {
+            float: left;
+            display: block;
+            background: none;
+            width: auto;
+            height: auto;
+            margin: 5px;
+        }
+        .header .title-text
+        {
+            display: block;
+            font-family: Cambria, Georgia, Serif;
+            font-size: 200%;
+            color: #000;
+            text-decoration: none;
+            display: block;
+            padding: 30px 10px 20px 10px;
+            text-indent: 0em;
+        }
+        .header a
+        {
+            color: #ced1d2;
+            text-decoration: none;
+        }
+        
+    /*
+    Navigation
+    */
+    
+        .nav
+        {
+            display: none;
+        }
+
+    /*
+    Introductions
+    */
+
+        .intro
+        {
+            border-bottom: 1px solid #d1d1d1;
+            background: none;
+            padding-bottom: 10px;
+        }
+        .intro-in
+        {
+            margin: 0 auto;
+            padding: 0px;
+            width: auto;
+            background: none;
+        }
+        .intro p
+        {
+            background: none;
+        }
+
+    /*
+    Content
+    */
+
+        .content
+        {
+            width: auto;
+            border: none;
+            padding: 10px 0 0 0;
+        }
+        .content ul
+        {
+            line-height: 22px;
+            margin: 0;
+            padding: 0;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .content ol
+        {
+            line-height: 22px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .content ul ul
+        {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .content ol ol
+        {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .content ul ol
+        {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .content ol ul
+        {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .content ul li
+        {
+            list-style-type: square;
+            background: none;
+            padding: 2px 0px 0px 0px;
+            margin-left: 25px;
+        }
+        .content ol ul li
+        {
+            list-style-type: square;
+            background: none;
+            padding: 2px 0px 0px 0px;
+            margin-left: 25px;
+        }
+        .content ol li
+        {
+            list-style-type: decimal;
+            background: none;
+            padding: 2px 0px 0px 0px;
+            margin-left: 0px;
+        }
+        .content ul ol li
+        {
+            list-style-type: decimal;
+            background: none;
+            padding: 2px 0px 0px 0px;
+            margin-left: 0px;
+        }
+
+    /* 
+    Footer
+    */
+
+        .footer
+        {
+            margin-top: 15px;
+            width: auto;
+            color: #666;
+            border-top: 1px solid #d1d1d1;
+        }
+        .footer-in
+        {
+            padding: 0;
+            width: auto;
+        }
+        .footer .copyright
+        {
+            float: none;
+            text-align: left;
+        }
+        .footer .credits
+        {
+            display: none;
+        }
+        
+    /* 
+    Layout Helpers 
+    */
+
+        .noscreen
+        {
+            display: none;
+        }

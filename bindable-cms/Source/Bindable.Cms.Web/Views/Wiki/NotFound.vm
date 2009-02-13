@@ -1,0 +1,13 @@
+﻿[Title]Not Found[/Title]
+
+[Introduction]
+    <h2>Error</h2>
+    <p>
+        The page requested could not be found. Below is a list of all pages on this site. If you followed a link from an external site, 
+        please $Html.ActionLink("email me", "Contact", "General").
+    </p>
+[/Introduction]
+
+[Content]
+    TODO: List site content here.
+[/Content]

@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="generator" content="Fog Creek CityDesk 2.0.27" />
+<meta name="citydesk" content="AF0A0761/38" />
+<title>Bindable LINQ - Dependencies</title>
+	<style type="text/css">
+	body {
+		background-color: #fff;
+		margin: 0;
+		padding: 0;
+		font: 10pt segoe UI, arial, tahoma, arial, sans-serif;
+	}
+
+	h1 {
+		font: bold 18pt "Cambria","Segoe UI",Arial;
+		margin: 0px;
+	}
+	h2 {
+		font-size: 12pt;
+		font-weight: bold;
+	}
+	h3 {
+		font-size: 11pt;
+		font-weight: bold;
+	}
+	h4, h5 {
+		font-size: 10pt;
+		font-weight: bold;
+	}
+	
+	#container
+	{
+		margin: 0px;
+		background-color: #fff;
+		color: #000;
+		border: 1px solid #FFFFFF;
+		line-height: 130%;
+	}
+	
+	#top
+	{
+		padding: 3px;
+		padding-left: 10px;
+		background-image: url(../../Images/FormHeaderMid-1388x72.png);
+		background-repeat: repeat-x;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #e0e0e0;
+	}
+	
+	#top h1
+	{
+		padding: 0;
+		margin: 0;
+	}
+	#top h1 a
+	{
+		color: #000000;
+		text-decoration: none;
+	}
+	
+	#top h2
+	{
+		padding: 0;
+		margin: 0;
+		margin-top: 5px;
+		margin-left: 5px;
+	}
+
+	
+	#content
+	{
+		padding: 15px;
+		padding-top: 0px;
+	}
+	
+	#footer
+	{
+		clear: both;
+		margin: 0;
+		padding: .5em;
+		color: #333;
+		background-color: #D4DFFF;
+		border-top: 1px solid #FFFFFF;
+	}
+	
+	#content a 
+	{
+		color:#105CB6;
+		font-weight: bold;
+		text-decoration:none;
+	}
+	
+	#content a:hover
+	{
+		text-decoration:underline;
+	}
+	
+	#content p { line-height: 150%; }
+
+	#content li { margin: 5px; }
+	#content img { margin: 10px; }
+
+	#nextPrevBar 
+	{
+		border-top: 1px solid #e0e0e0;
+		padding: 15px;
+	}
+		
+	#nextPrevBar a 
+	{
+		color:#105CB6;
+		font-weight: bold;
+		text-decoration:none;
+	}
+	
+	#nextPrevBar a:hover
+	{
+		text-decoration:underline;
+	}
+
+	pre
+	{
+		background:#F9F9F9 none repeat scroll 0 50%;
+		border-color:#E0E0E0;
+		border-style:solid;
+		border-width:1px 1px 1px 7px;
+		color:#222277;
+		font-family:Consolas,Lucida Console,Courier New,serif;
+		font-size:10pt;
+		line-height:110%;
+		overflow:auto;
+		padding:7px;
+	}
+
+	</style>
+</head>
+<body>
+
+	<div id="container">
+		<div id="top">
+			<a href="../../Index.html"><img height="100" alt="" src="../../Images/Logo.png" width="475" border="0" /></a>
+			<h2>Dependencies</h2>
+		</div>
+	
+		<div id="content">
+			<p>Bindable LINQ enables propagation of change by monitoring various <em>dependencies</em> on the query. This page details the different kinds of dependencies that are available in Bindable LINQ.</p>
+<h2>Source Dependencies</h2>
+<p>All queries have either a source collection or item that may raise events indicating changes. For <a href="Overview.html">iterators</a>&nbsp;and <a href="Overview.html">aggregators</a>, if a source collection implements the INotifyCollectionChanged or IBindingList interfaces, Bindable LINQ will automatically monitor the source collection for changes. For <a href="Overview.html">operators</a>, the INotifyPropertyChanged interface will be monitored.</p>
+<p>In most cases, Bindable LINQ is smart enough to do the minimum amount of work possible per change notification. For instance, if an item is added to a source collection, a Bindable LINQ <em>Where</em> query will receive the <em>Add</em> event, and will filter only the changed item - not the entire result set. In some cases, such as <em>Reset</em> events, the entire collection will be re-evaluated.</p><h2>Automatic Dependency Discovery</h2>
+<p>Many Bindable LINQ queries, such as <em>Where, Select</em> and <em>OrderBy</em>, take lambda expressions as parameters, which are usually quite important to the results of the query. In these cases, Bindable LINQ will automatically parse the expression tree and discover additional dependencies. For example, in the following query:</p>
+<pre>
+var query = contacts.Where(c =&gt; c.Name.Contains(textBox1.Text));
+</pre>
+<p>The <em>Name</em> property of each contact item, and the <em>Text</em> property of <em>TextBox1</em>, are important to this query. Bindable LINQ will detect this and set up dependencies on these two properties. If the Name of an item changes, the item will be re-filtered. If the Text of the TextBox changes, the entire result set will re-evaluate.</p>
+<p>Dependencies discovered in the lamda expressions can be broken into two categories:</p>
+<ul>
+<li>Item dependencies, which rely on one or more properties on an item in the source collection/source item. These changes will only affect the item raising the event.
+</li>
+<li>External dependencies, which rely on objects not owned by the query. These changes will cause the entire query to be re-evaluated.
+</li>
+</ul>
+<p>This expression tree analysis is usually quite fast, but it can cause unintended side effects, and it may be faster to skip. To this end, each query which conducts automatic dependency discovery provides an overload which enables you to disable automatic dependency discovery:</p>
+<pre>
+var query = contacts.Where(c =&gt; c.Name.Contains(textBox1.Text), DependencyDiscovery.Disabled);
+</pre>
+
+<h2>Manual Dependencies</h2>
+<p>Some queries may not reference an external item, but may still have dependencies on external items. These dependencies can be added manually using the DependsOn extension methods. This can also be useful if automatic dependency discovery is disabled.</p>
+<pre>
+var query = contacts.Where(c =&gt; c.Name.Contains(textBox1.Text), DependencyDiscovery.Disabled)
+                    .DependsOn("Name")
+                    .DependsOn(textBox1, TextBox.TextProperty);</pre>
+					
+		</div>
+	
+		<div id="nextPrevBar">
+		
+			<div style='float: left; width: 300px;'>
+				
+				    <a href="Platforms.html">Previous: Platform Support</a>
+				
+			</div>
+			<div style='float: right; width: 300px; text-align: right;'>
+				
+				    <a href="ListOfSupportedQueries.html">Next: List of Supported LINQ Syntax</a>
+				
+			</div>
+		
+		<div style='text-style: italic; text-align: center; clear: both; margin-top: 10px;'>
+			Copyright &copy; Paul Stovell, 2007. All rights reserved. <br/>
+			Bindable LINQ code is <a href="../../License.html">licensed</a> under the New BSD open source license.
+		</div>
+	</div>
+</body>
+</html>

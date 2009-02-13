@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="generator" content="Fog Creek CityDesk 2.0.27" />
+<meta name="citydesk" content="AF0A0761/16" />
+<title>Bindable LINQ - Getting Started with Bindable LINQ</title>
+	<style type="text/css">
+	body {
+		background-color: #fff;
+		margin: 0;
+		padding: 0;
+		font: 10pt segoe UI, arial, tahoma, arial, sans-serif;
+	}
+
+	h1 {
+		font: bold 18pt "Cambria","Segoe UI",Arial;
+		margin: 0px;
+	}
+	h2 {
+		font-size: 12pt;
+		font-weight: bold;
+	}
+	h3 {
+		font-size: 11pt;
+		font-weight: bold;
+	}
+	h4, h5 {
+		font-size: 10pt;
+		font-weight: bold;
+	}
+	
+	#container
+	{
+		margin: 0px;
+		background-color: #fff;
+		color: #000;
+		border: 1px solid #FFFFFF;
+		line-height: 130%;
+	}
+	
+	#top
+	{
+		padding: 3px;
+		padding-left: 10px;
+		background-image: url(../Images/FormHeaderMid-1388x72.png);
+		background-repeat: repeat-x;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #e0e0e0;
+	}
+	
+	#top h1
+	{
+		padding: 0;
+		margin: 0;
+	}
+	#top h1 a
+	{
+		color: #000000;
+		text-decoration: none;
+	}
+	
+	#top h2
+	{
+		padding: 0;
+		margin: 0;
+		margin-top: 5px;
+		margin-left: 5px;
+	}
+
+	
+	#content
+	{
+		padding: 15px;
+		padding-top: 0px;
+	}
+	
+	#footer
+	{
+		clear: both;
+		margin: 0;
+		padding: .5em;
+		color: #333;
+		background-color: #D4DFFF;
+		border-top: 1px solid #FFFFFF;
+	}
+	
+	#content a 
+	{
+		color:#105CB6;
+		font-weight: bold;
+		text-decoration:none;
+	}
+	
+	#content a:hover
+	{
+		text-decoration:underline;
+	}
+	
+	#content p { line-height: 150%; }
+
+	#content li { margin: 5px; }
+	#content img { margin: 10px; }
+
+	#nextPrevBar 
+	{
+		border-top: 1px solid #e0e0e0;
+		padding: 15px;
+	}
+		
+	#nextPrevBar a 
+	{
+		color:#105CB6;
+		font-weight: bold;
+		text-decoration:none;
+	}
+	
+	#nextPrevBar a:hover
+	{
+		text-decoration:underline;
+	}
+
+	pre
+	{
+		background:#F9F9F9 none repeat scroll 0 50%;
+		border-color:#E0E0E0;
+		border-style:solid;
+		border-width:1px 1px 1px 7px;
+		color:#222277;
+		font-family:Consolas,Lucida Console,Courier New,serif;
+		font-size:10pt;
+		line-height:110%;
+		overflow:auto;
+		padding:7px;
+	}
+
+	</style>
+</head>
+<body>
+
+	<div id="container">
+		<div id="top">
+			<a href="../Index.html"><img height="100" alt="" src="../Images/Logo.png" width="475" border="0" /></a>
+			<h2>Getting Started with Bindable LINQ</h2>
+		</div>
+	
+		<div id="content">
+			<p>This step-by-step guide will walk you through setting up your first project using Bindable LINQ.</p>
+<h2>Scenario</h2>
+<p>In this walkthrough you will create a new Windows Presentation Foundation project which uses Bindable LINQ to filter an array of strings as a user types. It is one of the simplest ways in which Bindable LINQ can be used.</p>
+<p><img height="124" alt="The application you will build in this walkthrough." src="../Images/Window1.jpg" width="325" border="0" /></p><h2>Requirements</h2>
+<p>Bindable LINQ is compatible with the .NET Framework version 3.5 and above. To follow this guide, you will need to install Microsoft Visual Studio 2008 Standard edition or above, or you can install the free editions of Microsoft Visual C#/VB.NET 2008 Express (todo: link).</p><h2>Steps</h2>
+<ol>
+<li><strong>Download Bindable LINQ</strong><br />
+You can either download the latest stable release from the Codeplex <a href="http://www.codeplex.com/bindablelinq/Release/ProjectReleases.aspx" target="_blank">releases page</a>, or download the latest source code and build it yourself. To compile the project yourself, read the section "<a href="../6_Implementation/Building.html">Building Bindable LINQ</a>".
+</li>
+<li><strong>Create a new WPF Application project</strong><br />
+Using any edition of Visual Studio 2008 which supports WPF, create a new WPF Application project using either C# or VB.NET.<br />
+<img height="140" alt="" src="../Images/AddProject.png" width="441" border="0" />
+</li>
+<li><strong>Add a reference to Bindable LINQ</strong><br />
+Extract the downloaded archive of Bindable LINQ to a folder of your choosing, or if you built it yourself, locate the build outputs folder (see the <a href="../6_Implementation/Building.html">Building Bindable LINQ</a> page for details). From Visual Studio, select <em>Add Reference...</em><br /><img height="112" alt="" src="../Images/AddReference.png" width="291" border="0" /><br />
+From the Browse tab, navigate to the Bindable LINQ directory and add a reference to <strong>Bindable.LINQ.dll</strong>. This is the only reference you will need.<br />
+<img height="192" alt="" src="../Images/AddReference2.png" width="319" border="0" />
+&nbsp;
+</li>
+<li><strong>Build the GUI</strong><br />
+You will need a ListBox to show the list of names, and a TextBox to filter them.<br />
+<pre>
+&lt;DockPanel&gt;
+    &lt;TextBox x:Name="_textBox1" DockPanel.Dock="Top" /&gt;
+    &lt;ListBox x:Name="_listBox1" /&gt;
+&lt;/DockPanel&gt;
+</pre>
+</li>
+<li><strong>Add a using directive for the core Bindable LINQ namespace</strong><br />
+In order to use Bindable LINQ, you will need to add a "using" entry for the Bindable.Linq namespace:<br />
+<pre>
+using Bindable.Linq;
+</pre>
+</li>
+<li><strong>Initialize a list of names and write the query
+&nbsp;</strong><br />
+Create an array of first names, and then use a Bindable LINQ query to filter and order them.<br />
+<pre>
+public Window1()
+{
+    InitializeComponent();
+
+    var names = new [] { "Paul", "Michael", "Sally", "Sally", "Mary" };
+    _listBox1.ItemsSource = from n in names.AsBindable()
+                            where n.StartsWith(
+                                _textBox1.Text,
+                                StringComparison.CurrentCultureIgnoreCase
+                                )
+                            orderby n
+                            select n;
+}
+</pre>
+</li>
+<li><strong>Run!</strong><br />
+The application should compile and run at this point. As you type in the TextBox, Bindable LINQ will detect changes to the TextBox (since you called it from your "where" query), and will re-evaluate the items in the collection.
+</li>
+</ol>
+<p>It's that easy. To see the experience of using standard LINQ to Objects, remove the "AsBindable" call and run the query again.</p>
+<p>To see more ways to use Bindable LINQ, see the <a href="../4_QueryExamples/Overview.html">Examples</a>, <a href="../5_SampleApplications/Overview.html">Sample Applications</a>, or <a href="../2_DesignConcepts/BindableLINQDetails/BindableLINQPatterns.html">Bindable LINQ Patterns</a> pages. 
+</p>
+<p>
+</p>
+					
+		</div>
+	
+		<div id="nextPrevBar">
+		
+			<div style='float: left; width: 300px;'>
+				
+			</div>
+			<div style='float: right; width: 300px; text-align: right;'>
+				
+			</div>
+		
+		<div style='text-style: italic; text-align: center; clear: both; margin-top: 10px;'>
+			Copyright &copy; Paul Stovell, 2007. All rights reserved. <br/>
+			Bindable LINQ code is <a href="../License.html">licensed</a> under the New BSD open source license.
+		</div>
+	</div>
+</body>
+</html>

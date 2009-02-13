@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="generator" content="Fog Creek CityDesk 2.0.27" />
+<meta name="citydesk" content="AF0A0761/24" />
+<title>Bindable LINQ - FAQ</title>
+	<style type="text/css">
+	body {
+		background-color: #fff;
+		font: 10pt segoe UI, arial, tahoma, arial, sans-serif;
+	}
+
+	h1 {
+		font: bold 18pt "Cambria","Segoe UI",Arial;
+		margin: 0px;
+	}
+	h2 {
+		font-size: 12pt;
+		font-weight: bold;
+	}
+	h3 {
+		font-size: 11pt;
+		font-weight: bold;
+	}
+	h4, h5 {
+		font-size: 10pt;
+		font-weight: bold;
+	}
+	
+	#container
+	{
+		width: 90%;
+		margin: 10px auto;
+		background-color: #fff;
+		color: #333;
+		border: 1px solid #009900;
+		line-height: 130%;
+	}
+	
+	#top
+	{
+		padding: .5em;
+		background-color: #F3F6EC;
+		border-bottom: 1px solid #009900;
+	}
+	
+	#top h1
+	{
+		padding: 0;
+		margin: 0;
+	}
+	
+	#leftnav
+	{
+		float: left;
+		width: 250px;
+		margin: 0;
+		padding: 10px;
+	}
+	
+	#content
+	{
+		margin-left: 300px;
+		border-left: 1px solid #009900;
+		padding: 10px;
+	}
+	
+	#footer
+	{
+		clear: both;
+		margin: 0;
+		padding: .5em;
+		color: #333;
+		background-color: #F3F6EC;
+		border-top: 1px solid #009900;
+	}
+	
+	a 
+	{
+		color:#105CB6;
+		text-decoration:underline;
+	}
+	
+	#content p { line-height: 150%; }
+
+	</style>
+</head>
+<body>
+
+	<div id="container">
+		<div id="top">
+			<h1><a href="../Index.html">Bindable LINQ</a></h1>
+			<h2>Reactive Programming for the .NET Framework</h2>
+		</div>
+		
+		<div id="leftnav">
+			<p>
+			<ul>
+				<li><a href="../Index.html">Introduction</a></li>
+				<li><a href="../1_QuickStarts/GettingStarted.html">Getting Started</a></li>
+				<li><a href="../2_DesignConcepts/Overview.html">Design Concepts</a></li>
+				<ul>
+					<li><a href="../2_DesignConcepts/BindableLINQOverview/Overview.html">Background</a></li>
+					<ul>
+						<li><a href="../2_DesignConcepts/BindableLINQOverview/ReactiveProgramming.html">Reactive Programming</a></li>
+						<li><a href="../2_DesignConcepts/BindableLINQOverview/DataBinding.html">Data Binding</a></li>
+						<li><a href="../2_DesignConcepts/BindableLINQOverview/LINQ.html">LINQ</a></li>
+					</ul>
+				</ul>
+				<ul>
+					<li><a href="../2_DesignConcepts/BindableLINQDetails/Overview.html">Bindable LINQ</a></li>
+					<ul>
+						<li><a href="../2_DesignConcepts/BindableLINQDetails/Platforms.html">Platform Support</a></li>
+						<li><a href="../2_DesignConcepts/BindableLINQDetails/Dependencies.html">Query Dependencies</a></li>
+						<li><a href="../2_DesignConcepts/BindableLINQDetails/ListOfSupportedQueries.html">List of Supported LINQ Syntax</a></li>
+						<li><a href="../2_DesignConcepts/BindableLINQDetails/BindableLINQPatterns.html">Application Patterns</a></li>
+					</ul>
+				</ul>
+				<li><a href="FAQ.html">FAQ</a></li>
+				<li><a href="../4_QueryExamples/Overview.html">Examples</a></li>
+				<li><a href="../5_SampleApplications/Overview.html">Sample Applications</a></li>
+				<li><a href="../6_Implementation/Overview.html">Implementation</a></li>
+				<li><a href="../License.html">License</a></li>
+			</ul>
+			</p>
+		</div>
+	
+		<div id="content">
+	
+			
+			<div>
+				<h1>FAQ</h1>
+			</div>
+			
+		
+			<p><strong>Q: Where do I get Bindable LINQ?</strong></p>
+<p> The Bindable LINQ releases, documentation and source code are hosted on <a href="http://www.codeplex.com/" target="_blank">Codeplex</a> at <a href="http://www.codeplex.com/bindablelinq" target="_blank">http://www.codeplex.com/bindablelinq</a>.</p>
+<p><strong>Q: Does Bindable LINQ talk to my database?</strong></p>
+<p><strong></strong>Bindable LINQ is designed to work on in-memory collections, and not directly against any for of database technology. However, Bindable LINQ queries can be used alongside external sources such as databases and web services to enable reactive applications. See the <a href="../2_DesignConcepts/BindableLINQDetails/BindableLINQPatterns.html">Application Patterns</a> section for details.</p>
+<p><strong>Q: Does Bindable LINQ help me using ASP.NET?</strong></p>
+<p><strong></strong>Bindable LINQ is designed for stateful, client side applications where reactive programming can greatly simplify code. Although it may work under ASP.NET, web sites typically follow a short-lived request-response model whereby the usefulness of Bindable LINQ is limited.</p>
+<p><strong>Q: Can I use Bindable LINQ at work?</strong></p>
+<p>Bindable LINQ is released under the <a href="http://" target="_blank">OSI-approved New BSD license</a>, which allows it to be used in both commercial and non-commercial applications without any requirements for those applications to be open source or for customizations to be shared with the community. See the section on <a href="../License.html">Licensing</a> for further details.</p>
+<p><strong>Q: I have a problem. Where can I report it?</strong></p>
+<p>The Codeplex site contains both an <a href="http://www.codeplex.com/bindablelinq/WorkItem/List.aspx" target="_blank">Issue Tracker</a> for reporting bugs, and a <a href="http://www.codeplex.com/bindablelinq/Thread/List.aspx" target="_blank">Discussions</a> page for discussing areas you aren't sure about.</p>
+<p><strong>Q: I need a custom query. How do I build one?</strong></p>
+<p>For query operators that are quite common, consider asking on the <a href="http://www.codeplex.com/bindablelinq/Thread/List.aspx" target="_blank">discussion page</a> incase someone else is also working on the same query. Otherwise, see the section on <a href="../6_Implementation/Overview.html">Implementation</a> for a guide.</p>
+		</div>
+	
+		<div id="footer">More Links</div>
+	</div>
+</body>
+</html>

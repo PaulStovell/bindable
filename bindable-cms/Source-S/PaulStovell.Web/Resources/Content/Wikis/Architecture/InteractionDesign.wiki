@@ -1,0 +1,18 @@
+﻿[Summary]
+    This wiki captures a collaborative approach to application design and architecture, with a focus on Windows Client  
+    applications. The table of contents is presented below, and you can follow the links of any of the entries to see 
+    more details. If you have any suggestions or feedback, please don't heasitate to leave a comment.
+[/Summary]
+
+[Title: Interaction Design]
+ 
+    This stage turns the requirements captured above into a framework for a solution. This stage is primarily owned 
+    by interaction designers, with heavy involvement from business analysts, customer advocates and users or user 
+    representitives. Developers and architects should also have an involvement at this point to help guide interaction 
+    designers in terms of what's possible with technology. 
+     
+    I feel that solution design should be owned by interaction designers because it is the best way to create a 
+    consistent, user-centric experience. 
+    
+    [Include: InteractionDesign-TOC]
+    

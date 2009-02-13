@@ -1,0 +1,16 @@
+﻿    
+    - Design Priorities 
+    - Workflows 
+    - Screen Design 
+    - Navigation Model 
+    - - Containers, Popups, Tabs, Docking
+    - Wireframes 
+    - Mockups 
+    - Clickthroughs 
+    - Adaptive Alternatives 
+    - Prototypes and proof of concepts 
+    - Interaction Patterns 
+    - Interaction Device Catalog 
+    - Style Guide 
+    - Graphics Catalog
+    

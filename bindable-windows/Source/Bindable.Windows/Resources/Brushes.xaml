@@ -1,0 +1,19 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+    
+    <!-- The brush that should be used as the background for Windows -->
+    <LinearGradientBrush x:Shared="False" x:Key="Brush_OfficeMainWindowBackgroundBrush">
+        <LinearGradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="{DynamicResource Theme_PrimaryBackgroundColor}" Offset="0" />
+                <GradientStop Color="{DynamicResource Theme_SecondaryBackgroundColor}" Offset="1" />
+            </GradientStopCollection>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    
+    <SolidColorBrush x:Shared="False" x:Key="Brush_OfficeDialogWindowBackgroundBrush" Color="{DynamicResource Theme_DialogBackgroundColor}" />
+    <SolidColorBrush x:Key="Brushes_OfficeBorderStandard" Color="{DynamicResource Theme_StandardBorderColor}" />
+
+</ResourceDictionary>

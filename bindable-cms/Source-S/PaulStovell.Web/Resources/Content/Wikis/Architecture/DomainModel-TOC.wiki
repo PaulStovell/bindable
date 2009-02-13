@@ -1,0 +1,15 @@
+﻿
+    
+    - Per domain breakdown 
+    - Vision statement 
+    - Ubiquitous Language 
+    - Contexts 
+    - Entities 
+    - Services 
+    - Aggregates 
+    - Dependencies 
+    - Gateways 
+    - Repositories 
+    - Workflows 
+    - Key Entities and Services
+

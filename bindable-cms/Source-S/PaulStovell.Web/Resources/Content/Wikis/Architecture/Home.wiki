@@ -1,0 +1,52 @@
+﻿[Summary]
+    This wiki captures a collaborative approach to application design and architecture, with a focus on Windows Client  
+    applications. The table of contents is presented below, and you can follow the links of any of the entries to see 
+    more details. If you have any suggestions or feedback, please don't heasitate to leave a comment.
+[/Summary]
+
+[Title: Client Architecture]
+
+    Typical projects follow an SDLC that seperates the roles of team members and sees them working on different 
+    artifacts during the architecture and development process. It is my belief that these processes should be 
+    more collaborative. For example, Business Analysis often work on Functional Specifications which provide a 
+    functional overview of the implementation of the application, down to the level of detailing every field on 
+    a form. But these documents generally don't provide the level of detail required by developers, and nor do 
+    they easily lend themselves to being designed by interaction designers. Instead, I advocate a collaborative 
+    approach, where such designs are worked on by business analysis, developers and architects together, at least 
+    during the initial envisioning of the application. 
+
+#### {[Vision|Vision and Scope]} ####
+
+    [Include: Vision-TOC]
+
+#### {Project Planning} ####
+
+    [Include: Planning-TOC]
+
+#### {Solution Design Requirements} ####
+
+    [Include: Requirements-TOC]
+
+#### {Interaction Design} ####
+ 
+    [Include: InteractionDesign-TOC]
+    
+#### {Solution Design} ####
+
+    [Include: SolutionDesign-TOC]
+    
+#### {Application Model} ####
+
+    [Include: ApplicationModel-TOC]
+
+#### {Domain Models} ####
+
+    [Include: DomainModel-TOC]
+
+#### {View Specification Process} ####
+
+    [Include: ViewSpecifications-TOC]
+
+#### {Build and Deployment Process} ####
+
+    [Include: BuildDeployment-TOC]

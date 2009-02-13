@@ -1,0 +1,155 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F9AEDED4-44A1-4A23-8E17-90D2E39A0698}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bindable.Windows</RootNamespace>
+    <AssemblyName>Bindable.Windows</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>false</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows" />
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Bindable.Windows\Controls\AutomaticValidationProvider.cs">
+      <Link>Controls\AutomaticValidationProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\DataErrorInfoValidationProvider.cs">
+      <Link>Controls\DataErrorInfoValidationProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\Form.cs">
+      <Link>Controls\Form.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\FormBody.cs">
+      <Link>Controls\FormBody.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\FormButtonBar.cs">
+      <Link>Controls\FormButtonBar.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\FormField.cs">
+      <Link>Controls\FormField.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\FormFieldGroup.cs">
+      <Link>Controls\FormFieldGroup.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\FormFooter.cs">
+      <Link>Controls\FormFooter.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\FormHeader.cs">
+      <Link>Controls\FormHeader.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\IValidationDisplayStrategy.cs">
+      <Link>Controls\IValidationDisplayStrategy.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\IValidationProvider.cs">
+      <Link>Controls\IValidationProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\MultiValidationProvider.cs">
+      <Link>Controls\MultiValidationProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\ValidatableValidationProvider.cs">
+      <Link>Controls\ValidatableValidationProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\ValidationContext.cs">
+      <Link>Controls\ValidationContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\ValidationEventArgs.cs">
+      <Link>Controls\ValidationEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\ValidationFailure.cs">
+      <Link>Controls\ValidationFailure.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\ValidationMode.cs">
+      <Link>Controls\ValidationMode.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\ValidationReason.cs">
+      <Link>Controls\ValidationReason.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\ValidationRequest.cs">
+      <Link>Controls\ValidationRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\ValidationResultsChangedEventArgs.cs">
+      <Link>Controls\ValidationResultsChangedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Controls\ValidationScope.cs">
+      <Link>Controls\ValidationScope.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Framework\IValidatable.cs">
+      <Link>Framework\IValidatable.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Framework\IValidationResult.cs">
+      <Link>Framework\IValidationResult.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Framework\IValidationRule.cs">
+      <Link>Framework\IValidationRule.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Framework\LambdaValidationRule.cs">
+      <Link>Framework\LambdaValidationRule.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Framework\RuleBook.cs">
+      <Link>Framework\RuleBook.cs</Link>
+    </Compile>
+    <Compile Include="..\Bindable.Windows\Framework\ValidationResult.cs">
+      <Link>Framework\ValidationResult.cs</Link>
+    </Compile>
+    <Compile Include="Framework\IDataErrorInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Converters\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Markup\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Themes\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight\v2.0\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

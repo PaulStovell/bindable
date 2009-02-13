@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E7B552F-3550-4173-A35D-3136484ED108}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bindable.Windows</RootNamespace>
+    <AssemblyName>Bindable.Windows</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Microsoft.Patterns\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\%28Solution%29\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="AutoCorrection\AutoCorrection.cs" />
+    <Compile Include="AutoCorrection\AutoCorrectionCommands.cs" />
+    <Compile Include="AutoCorrection\Correction.cs" />
+    <Compile Include="AutoCorrection\TitleCaseNameCorrector.cs" />
+    <Compile Include="Controls\ILogicalChildContainer.cs" />
+    <Compile Include="Controls\LogicalChildCollection.cs" />
+    <Compile Include="Controls\ValidationProviders\ValidationProvider.cs" />
+    <Compile Include="Controls\ValidationResult.cs" />
+    <Compile Include="Controls\ValidationStates\ValidationStateManager.cs" />
+    <Compile Include="Controls\AdornedElementPlaceholderExtended.cs" />
+    <Compile Include="Controls\ValidationStates\AutomaticAfterFocusValidationStateManager.cs" />
+    <Compile Include="Controls\ValidationStates\AutomaticAfterManualValidationStateManager.cs" />
+    <Compile Include="Controls\ValidationProviders\AutomaticValidationProvider.cs" />
+    <Compile Include="Controls\ValidationStates\AutomaticValidationStateManager.cs" />
+    <Compile Include="Controls\CommandLink.cs" />
+    <Compile Include="Controls\CommandLinkAutomationPeer.cs" />
+    <Compile Include="Controls\ValidationProviders\DataErrorInfoValidationProvider.cs" />
+    <Compile Include="Controls\Form.cs" />
+    <Compile Include="Controls\FormBody.cs" />
+    <Compile Include="Controls\FormButtonBar.cs" />
+    <Compile Include="Controls\FormField.cs" />
+    <Compile Include="Controls\FormFieldGroup.cs" />
+    <Compile Include="Controls\FormFooter.cs" />
+    <Compile Include="Controls\FormHeader.cs" />
+    <Compile Include="Controls\HierarchicalComboBox.cs" />
+    <Compile Include="Controls\ValidationDisplayStrategies\IValidationDisplayStrategy.cs" />
+    <Compile Include="Controls\ValidationStates\ManualValidationStateManager.cs" />
+    <Compile Include="Controls\MessageList.cs" />
+    <Compile Include="Controls\MessageListCommands.cs" />
+    <Compile Include="Controls\TemplatedAdorner.cs" />
+    <Compile Include="Controls\ValidationProviders\ValidatableValidationProvider.cs" />
+    <Compile Include="Controls\ValidationStates\ValidateRequestEventArgs.cs" />
+    <Compile Include="Controls\ValidationProviders\ValidationContext.cs" />
+    <Compile Include="Controls\ValidationElementResult.cs" />
+    <Compile Include="Controls\ValidationTrigger.cs" />
+    <Compile Include="Controls\ValidationReason.cs" />
+    <Compile Include="Controls\ValidationScope.cs" />
+    <Compile Include="Controls\ValidationDisplayStrategies\WpfValidationDisplayStrategy.cs" />
+    <Compile Include="AutoCorrection\IAutoCorrector.cs" />
+    <Compile Include="Converters\StringFormatConverter.cs" />
+    <Compile Include="Converters\StringFormatMultiConverter.cs" />
+    <Compile Include="Extensions\AccessibilityExtensions.cs" />
+    <Compile Include="Extensions\FocusExtensions.cs" />
+    <Compile Include="Extensions\ItemsControlExtensions.cs" />
+    <Compile Include="Extensions\ElementExtender.cs" />
+    <Compile Include="Extensions\HelpExtensions.cs" />
+    <Compile Include="Extensions\TabClosingEventArgs.cs" />
+    <Compile Include="Extensions\TabCommands.cs" />
+    <Compile Include="Extensions\TabExtensions.cs" />
+    <Compile Include="Extensions\ToggleButtonExtensions.cs" />
+    <Compile Include="Extensions\WindowExtensions.cs" />
+    <Compile Include="Framework\IValidatable.cs" />
+    <Compile Include="Framework\IValidationFieldResult.cs" />
+    <Compile Include="Framework\IValidationRule.cs" />
+    <Compile Include="Framework\LambdaValidationRule.cs" />
+    <Compile Include="Framework\RuleBook.cs" />
+    <Compile Include="Framework\ValidationCategory.cs" />
+    <Compile Include="Framework\ValidationFieldResult.cs" />
+    <Compile Include="Helpers\BindingHelper.cs" />
+    <Compile Include="Helpers\PackUriHelper.cs" />
+    <Compile Include="Helpers\TreeViewHelper.cs" />
+    <Compile Include="Markup\DelayBindingInstance.cs" />
+    <Compile Include="Markup\DelayBinding.cs" />
+    <Compile Include="Markup\ResolveAll.cs" />
+    <Compile Include="Markup\Resolve.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resources\%28All%29.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Borders.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Brushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ComboBoxes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Converters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Forms.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Layout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Panels.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\TabControls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\TextBoxes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ValidationScope.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Windows.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bindable.Core\Bindable.Core.csproj">
+      <Project>{6EB498B0-4DFA-45B2-9420-532C4D7B0410}</Project>
+      <Name>Bindable.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bindable.Linq\Bindable.Linq.csproj">
+      <Project>{C5A76854-BCE0-4E82-9DD0-A7DB3C834EBE}</Project>
+      <Name>Bindable.Linq</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

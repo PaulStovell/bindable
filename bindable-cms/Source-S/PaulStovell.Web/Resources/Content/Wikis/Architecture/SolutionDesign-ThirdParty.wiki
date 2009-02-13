@@ -1,0 +1,46 @@
+﻿[Summary]
+    This page provides information on third party vendors and the components they provide, to help you when evaluating build vs. buy decisions. 
+[/Summary]
+[Title: Third Party Components]
+[Parent: SolutionDesign]
+
+    When designing applications we are often faced with the decision of building specific functionality ourselves, or seeking third 
+    party offerings. Here are a list of key things to keep in mind when evaluating a third party component:
+    
+    - *Test for memory leaks*. I have had bad experiences with some of the components below in the past where references to items that 
+      should have been garbage collected are still in memory. Jared Roughan and I had plenty of fun dealing with memory leaks caused by SyncFusion's 
+      refusal to release references to tabs that had been closed. Try to know these issues before you commit. 
+    - *Review their styling and theming capabilities*. I have found Infragistics controls to follow WPF conventions well, using merged resource 
+      dictionaries for theming. SyncFusion on the other hand appeared to have used their own styling system, which resulted in many thousands 
+      of lines of XAML. 
+    - *You don't have to use every control in a suite*. Control suites are attractive, but don't fall into the habit of using every control in a 
+      suite if they do not add value.
+    - *Honestly consider the build option*. The controls below are built to support many edge cases, but your own needs may be more limited. 
+      Controls such as the Outlook Bar or MDI Tab controls below could typically be built by a competent WPF developer in less than a day or 
+      two.
+
+#### {{WPF Control Vendors}} ####
+
+    Table 1 provides a list of third party vendors and the controls they produce, intended as a guide only. 
+
+[Table 1: "Third party vendors"]
+    Control/Vendor          Infragistics    DevExpress    SyncFusion    Telerik    Xceed    Microsoft    Open Source        
+    Data Grid               Yes             Yes           Yes           Yes        Yes      Yes          -                  
+    Date/Time Picker        Yes             -             -             Yes        Yes      Yes          AvalonControls     
+    Chart                   Yes             Yes           Yes           Yes        -        Yes          -                  
+    Carousels               Yes             -             -             Yes        -        -            ElementFlow        
+    Docking Containers      Yes             -             Yes           -          -        -            AvalonDock         
+    Outlook Bar             Yes             -             Yes           Yes        -        -            -                  
+    Masked Text Box         Yes             -             Yes           -          Yes      -            AvalonControls     
+    Ribbon                  Yes             -             Yes           -          -        Yes          -                  
+    Color Picker            -               -             Yes           -          -        -            -                  
+    Diagramming             -               -             Yes           -          -        -            -                  
+    Gauge                   -               -             Yes           Yes        -        -            -                  
+    Syntax editor           -               -             Yes           -          -        -            -                  
+    Scheduler               -               -             -             Yes        -        -            -                  
+[/Table]
+
+    Note that although this was accurate at the time of writing, chances are it is already out of date. Please see the vendors page for more information.
+    
+    If you represent a third party vendor or know of controls not listed here, please don't hesitate to leave a comment.
+    

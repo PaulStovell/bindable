@@ -1,0 +1,10 @@
+BEGIN:VCARD
+PRODID:-//kaply.com//Operator 0.8//EN
+NAME:Paul Stovell -> Contact
+VERSION:3.0
+N;CHARSET=UTF-8:Stovell;Paul;;;
+FN;CHARSET=UTF-8:Paul Stovell
+UID:
+EMAIL:paul@paulstovell.com
+TEL;TYPE=cell:+61.420.314.127
+END:VCARD

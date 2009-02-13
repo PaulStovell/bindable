@@ -1,0 +1,76 @@
+<%@ Master Language="C#" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewMasterPage" %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Paul Stovell - <%= Page.Title %> </title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Paul Stovell" />
+    <meta name="copyright" content="Paul Stovell, 2009. All rights reserved." />
+    <meta name="description" content="Paul Stovell's thoughts on WPF architecture, design and code." />
+    <meta name="keywords" content="WPF, C#, .NET, Windows Presentation Foundation, Architecture" />
+    <meta name="robots" content="all,follow" />
+    <link href="/Resources/Styles/Screen.css" type="text/css" rel="stylesheet" />
+    <link href="/Resources/Styles/Print.css" type="text/css" rel="stylesheet" media="print" />
+    <link href="/Resources/Scripts/SyntaxHighlighter/SyntaxHighlighter.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="/Resources/Scripts/SyntaxHighlighter/shCore.js"></script>
+    <script type="text/javascript" src="/Resources/Scripts/SyntaxHighlighter/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="/Resources/Scripts/JQuery/JQuery.js"></script>
+    <script type="text/javascript" src="/Resources/Scripts/JQuery/JQuery-FieldSelection.js"></script>
+    <script type="text/javascript" src="/Resources/Scripts/JQuery/JQuery-ScrollTo.js"></script>
+    <script type="text/javascript" src="/Resources/Scripts/Site/Site.js"></script>
+    <script type="text/javascript" src="/Resources/Scripts/MD5/MD5.js"></script>
+    
+<asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+
+</head>
+
+<body>
+    <div class="layout">
+        <div class="header">
+            <div class="header-in">
+                <img src="/Resources/Images/Me.jpg" alt="Paul Stovell" title="Paul Stovell" class="thumb" />
+                <a class="title" href="/" title="Paul Stovell">
+                    <span class="title-text">Paul Stovell on Client Architecture</span>
+                </a>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="nav-in">
+                <% Html.RenderPartial("Partials/Menu"); %>
+            </div>
+        </div>
+        <div class="intro">
+            <div class="intro-in">
+
+<asp:ContentPlaceHolder ID="NavigationContent" runat="server" />
+
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-in">
+                <div>
+                
+<asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-in">
+            <div class="copyright">
+                Copyright &copy; 2008 <a href="#">Paul Stovell</a>, all rights reserved.<br /> 
+            </div>
+            <div class="credits">
+                Built with <a href="http://www.asp.net/mvc">ASP.NET MVC</a> | <a href="#">Source code</a> available via Subversion<br />
+                Modified from design by <a href="http://www.davidkohout.cz">David Kohout</a><br />
+                Syntax highlighting by <a href="http://code.google.com/p/syntaxhighlighter/">SyntaxHighlighter</a><br />
+                This page took <%= (DateTime.Now - (DateTime)HttpContext.Current.Items["RenderStartTime"]).TotalMilliseconds %> milliseconds to render
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

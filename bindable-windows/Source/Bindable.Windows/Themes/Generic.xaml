@@ -1,0 +1,12 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:Bindable.Windows.Controls"
+    >
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Bindable.Windows;Component/Resources/(All).xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <!-- Wire up defaults for any application that references this assembly -->
+    <Style TargetType="Controls:ValidationScope" BasedOn="{StaticResource ValidationScope_Default}" />
+</ResourceDictionary>

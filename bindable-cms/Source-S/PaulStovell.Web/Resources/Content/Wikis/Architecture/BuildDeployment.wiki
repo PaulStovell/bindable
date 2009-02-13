@@ -1,0 +1,11 @@
+﻿[Summary]
+    This wiki captures a collaborative approach to application design and architecture, with a focus on Windows Client  
+    applications. The table of contents is presented below, and you can follow the links of any of the entries to see 
+    more details. If you have any suggestions or feedback, please don't heasitate to leave a comment.
+[/Summary]
+
+[Title: Build & Deployment]
+
+    These processes are more general and are merely in here for completeness. 
+    
+    [Include: BuildDeployment-TOC]

@@ -1,0 +1,26 @@
+﻿[Summary]
+    This wiki captures a collaborative approach to application design and architecture, with a focus on Windows Client  
+    applications. The table of contents is presented below, and you can follow the links of any of the entries to see 
+    more details. If you have any suggestions or feedback, please don't heasitate to leave a comment.
+[/Summary]
+
+[Title: View Specifications]
+
+    This process enables developers to translate the wireframes from the interaction design, and the architectural 
+    framework from the application model and domain model, and gives everyone on the team a clear, agreed upon path 
+    as to how a view will be implemented.
+
+    For the current iteration, I would gather all of the views and workflows that are required, and then turn each one into 
+    a document. This is the point at which BA's would describe the role of every field on a form, architects would train 
+    developers in the framework, missing styles, templates, or functionality in the architecture would be identified, and 
+    developers would plan the general approach to implementing a form.
+
+    I expect that during the first iteration, or at least the first few views, this process will be owned by architects. Over 
+    time, it would be best for developers to take control. I imagine that this would be done in parallel with BA's and 
+    testers - as a BA completes the requirements of the view, a developer and architect begin to design the implementation,
+     and the testers then begin to plan the test cases.
+
+    Each view should have a clear owner in terms of a BA, Tester, Developer and architect or lead developer responsible for it. 
+    Where a view is used by other views, those teams should collaborate on the designs. 
+
+    [Include: ViewSpecifications-TOC]

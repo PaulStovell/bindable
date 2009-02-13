@@ -1,0 +1,7 @@
+﻿
+    - Iteration plan 
+    - Ongoing maintenance plan 
+    - Budget 
+    - Team structure 
+    - Deadlines
+

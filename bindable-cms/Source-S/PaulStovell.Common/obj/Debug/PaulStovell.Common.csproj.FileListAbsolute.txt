@@ -1,0 +1,5 @@
+T:\Code\Wush - Paul Stovell\Projects\PaulStovell.com\PaulStovell.Common\bin\Debug\PaulStovell.Common.dll
+T:\Code\Wush - Paul Stovell\Projects\PaulStovell.com\PaulStovell.Common\bin\Debug\PaulStovell.Common.pdb
+T:\Code\Wush - Paul Stovell\Projects\PaulStovell.com\PaulStovell.Common\obj\Debug\ResolveAssemblyReference.cache
+T:\Code\Wush - Paul Stovell\Projects\PaulStovell.com\PaulStovell.Common\obj\Debug\PaulStovell.Common.dll
+T:\Code\Wush - Paul Stovell\Projects\PaulStovell.com\PaulStovell.Common\obj\Debug\PaulStovell.Common.pdb

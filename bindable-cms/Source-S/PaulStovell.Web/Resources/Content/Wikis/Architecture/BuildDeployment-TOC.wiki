@@ -1,0 +1,9 @@
+﻿
+    
+    # Dependency management strategy 
+    # Environments analysis 
+    # Automated build strategy 
+    # - Automated deployment strategy 
+    # - Deployment guide 
+    # Monitoring strategy
+

@@ -1,5 +1,0 @@
-C:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Windows.Silverlight\obj\Debug\ResolveAssemblyReference.cache
-C:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Windows.Silverlight\Bin\Debug\Bindable.Windows.dll
-C:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Windows.Silverlight\Bin\Debug\Bindable.Windows.pdb
-C:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Windows.Silverlight\obj\Debug\Bindable.Windows.dll
-C:\Code\Codeplex - Bindable\Trunk\Source\Bindable.Windows.Silverlight\obj\Debug\Bindable.Windows.pdb

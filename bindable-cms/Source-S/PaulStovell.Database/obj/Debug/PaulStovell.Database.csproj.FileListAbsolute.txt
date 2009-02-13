@@ -1,7 +1,0 @@
-T:\Code\Wush - Paul Stovell\Projects\PaulStovell.com\PaulStovell.Database\obj\Debug\ResolveAssemblyReference.cache
-T:\Code\Wush - Paul Stovell\Projects\PaulStovell.com\PaulStovell.Database\bin\Debug\PaulStovell.Database.exe
-T:\Code\Wush - Paul Stovell\Projects\PaulStovell.com\PaulStovell.Database\bin\Debug\PaulStovell.Database.pdb
-T:\Code\Wush - Paul Stovell\Projects\PaulStovell.com\PaulStovell.Database\bin\Debug\PaulStovell.Common.dll
-T:\Code\Wush - Paul Stovell\Projects\PaulStovell.com\PaulStovell.Database\bin\Debug\PaulStovell.Common.pdb
-T:\Code\Wush - Paul Stovell\Projects\PaulStovell.com\PaulStovell.Database\obj\Debug\PaulStovell.Database.exe
-T:\Code\Wush - Paul Stovell\Projects\PaulStovell.com\PaulStovell.Database\obj\Debug\PaulStovell.Database.pdb

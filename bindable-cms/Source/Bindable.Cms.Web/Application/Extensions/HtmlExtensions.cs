@@ -1,15 +1,26 @@
 ﻿using System.Web.Mvc;
 using System.Web.Mvc.Html;
+using Bindable.Cms.Domain.ApplicationModel;
 using Bindable.Cms.Domain.Framework.Validation;
 using Bindable.Cms.Domain.Repositories;
 using Bindable.Cms.Web.Application.ContentManagement;
 using Bindable.Cms.Web.Application.ContentManagement.Markup;
-using Bindable.Cms.Domain.ApplicationModel;
+using Bindable.Cms.Web.Application.Framework.NVelocitySupport;
 
 namespace Bindable.Cms.Web.Application.Extensions
 {
     public static class HtmlExtensions
     {
+        public static string MenuLink(this HtmlHelper html, string tabName, string text, string url)
+        {
+            var currentTab = html.RenderView((string) html.ViewData["RequestedViewName"], "Tab");
+            if (currentTab == tabName)
+            {
+                return string.Format("<li class='active'><a href=\"{0}\">{1}</a></li>", url, text);
+            }
+            return string.Format("<li><a href=\"{0}\">{1}</a></li>", url, text);
+        }
+
         public static string WikiLink(this HtmlHelper html, string displayText, string wiki)
         {
             return html.ActionLink(displayText, "Entry", "Wiki", new { controller = "Wiki", wiki, path = "" });

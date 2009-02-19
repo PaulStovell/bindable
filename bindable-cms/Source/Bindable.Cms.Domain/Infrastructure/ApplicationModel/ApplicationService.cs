@@ -26,6 +26,7 @@ namespace Bindable.Cms.Domain.ApplicationModel
             _container = new WindsorContainer();
             _container.Kernel.Resolver.AddSubResolver(new ArrayResolver(_container.Kernel));
             _container.Kernel.AddFacility<DelegateSupportFacility>();
+            Register<IApplicationService>(this);
         }
 
         /// <summary>

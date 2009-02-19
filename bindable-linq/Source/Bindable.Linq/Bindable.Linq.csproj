@@ -41,9 +41,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\%28Solution%29\SolutionInfo.cs">
-      <Link>Properties\SolutionInfo.cs</Link>
-    </Compile>
     <Compile Include="Adapters\Incoming\BindableCollectionAdapterBase.cs" />
     <Compile Include="Adapters\Incoming\BindingListToBindableCollectionAdapter.cs" />
     <Compile Include="Adapters\Incoming\ObservableCollectionToBindableCollectionAdapter.cs" />
@@ -178,11 +175,7 @@
     <None Include="Diagrams\Everything.cd" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bindable.Aspects\Bindable.Aspects.csproj">
-      <Project>{29AAF238-E9A9-4F5D-B440-FB162ED77207}</Project>
-      <Name>Bindable.Aspects</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Bindable.Core\Bindable.Core.csproj">
+    <ProjectReference Include="..\..\..\bindable-core\Source\Bindable.Core\Bindable.Core.csproj">
       <Project>{6EB498B0-4DFA-45B2-9420-532C4D7B0410}</Project>
       <Name>Bindable.Core</Name>
     </ProjectReference>
@@ -190,11 +183,7 @@
   <ItemGroup>
     <Folder Include="Interfaces\Internal\Events\" />
   </ItemGroup>
-  <PropertyGroup>
-    <DontImportPostSharp>True</DontImportPostSharp>
-  </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\..\Dependencies\PostSharp\PostSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

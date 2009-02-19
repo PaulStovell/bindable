@@ -1,0 +1,64 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Samples.PointOfSale.Views.Sale.SaleView"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" xmlns:Samples_PointOfSale_Views_Sale="clr-namespace:Samples.PointOfSale.Views.Sale" d:DesignWidth="1015.707" d:DesignHeight="665"
+    >
+	<UserControl.Resources>
+		<ObjectDataProvider x:Key="SaleViewModel" d:IsDataSource="True" ObjectType="{x:Type Samples_PointOfSale_Views_Sale:SaleViewModel}"/>
+		<DataTemplate x:Key="LineItemsTemplate">
+			<Border Background="{x:Null}" Margin="5,5,5,5">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<TextBlock Text="{Binding Path=Product.Name, Mode=OneWay, FallbackValue=Product}" Margin="3,3,3,3" x:Name="Product" Grid.Column="0"/>
+					<TextBlock Text="{Binding Path=Quantity, Mode=Default, FallbackValue=Quantity}" HorizontalAlignment="Right" Margin="3,3,3,3" x:Name="Quantity" Width="45.58" Grid.Column="1"/>
+					<TextBlock Text="{Binding Path=Discount, Mode=Default, FallbackValue=Discount}" HorizontalAlignment="Right" Margin="3,3,3,3" x:Name="Discount" Width="46.633" Grid.Column="2"/>
+					<TextBlock Text="{Binding Path=TotalPrice, Mode=OneWay, FallbackValue=Price}" HorizontalAlignment="Right" Margin="3,3,3,3" x:Name="TotalPrice" Width="25.62" Grid.Column="3"/>
+				</Grid>
+			</Border>
+		</DataTemplate>
+	</UserControl.Resources>
+    
+    <UserControl.Background>
+        <RadialGradientBrush>
+            <RadialGradientBrush.RelativeTransform>
+                <TransformGroup>
+                    <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.001" ScaleY="1.001"/>
+                    <SkewTransform AngleX="0" AngleY="0" CenterX="0.5" CenterY="0.5"/>
+                    <RotateTransform Angle="0" CenterX="0.5" CenterY="0.5"/>
+                    <TranslateTransform X="-0.16" Y="-0.155"/>
+                </TransformGroup>
+            </RadialGradientBrush.RelativeTransform>
+            <GradientStop Color="#FFFFB300" Offset="0"/>
+            <GradientStop Color="#FFFFF565" Offset="1"/>
+        </RadialGradientBrush>
+    </UserControl.Background>
+    <Grid>
+        <Border Margin="33,67,35,31" CornerRadius="7,7,7,7" Background="#FFFFFFFF">
+            <Grid>
+                <Border HorizontalAlignment="Right" Margin="0,0,-20,-21" VerticalAlignment="Bottom" Width="301" Height="68" Background="#FFA9D4FF" BorderBrush="#FF8786FF" BorderThickness="7,7,7,7" CornerRadius="5,5,5,5">
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="36" Text="{Binding Path=Total.Current, Mode=Default, Source={StaticResource SaleViewModel}, StringFormat=c}" />
+                </Border>
+                <Border HorizontalAlignment="Left" Margin="-20,-20,0,0" VerticalAlignment="Top" Width="301" Height="68" Background="#FFFFFFFF" BorderBrush="#FF8786FF" BorderThickness="7,7,7,7" CornerRadius="5,5,5,5">
+                    <TextBox Text="Scan an item..." TextWrapping="Wrap" FontWeight="Bold" FontSize="36" x:Name="BarcodeTextBox" />
+                </Border>
+                <Button Margin="285,-20,0,0" VerticalAlignment="Top" Height="68" Content="Add" Width="110" HorizontalAlignment="Left" Click="AddButton_Click" />
+                <Button Margin="0,-20,-20,0" VerticalAlignment="Top" Height="68" Content="Pay" Width="111" HorizontalAlignment="Right"/>
+                <Button Margin="0,-20,95,0" VerticalAlignment="Top" Height="68" Content="Discount" HorizontalAlignment="Right" Width="111"/>
+                <Border Margin="342,0,285,-21" VerticalAlignment="Bottom" Height="68" Background="#FFA9D4FF" BorderBrush="#FF8786FF" BorderThickness="7,7,7,7" CornerRadius="5,5,5,5">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" TextWrapping="Wrap" Text="{Binding Path=Discount, Mode=Default, Source={StaticResource SaleViewModel}}"/>
+                </Border>
+                <Border Margin="19,62,28,68" Background="#FFEEEEEE" CornerRadius="5,5,5,5">
+                	<ItemsControl Margin="5,5,5,5" ItemsSource="{Binding Path=LineItems, Mode=Default, Source={StaticResource SaleViewModel}}" ItemTemplate="{DynamicResource LineItemsTemplate}"/>
+                </Border>
+            </Grid>
+        </Border>
+        <TextBlock HorizontalAlignment="Left" Margin="33,8,0,0" VerticalAlignment="Top" Width="352" Height="35" TextWrapping="Wrap" FontSize="24"><Run Language="en-au" Text="Bindable "/><Run FontWeight="Bold" Language="en-au" Text="Point of Sale"/></TextBlock>
+
+    </Grid>
+</UserControl>

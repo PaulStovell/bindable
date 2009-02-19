@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using Bindable.Core.Helpers;
 using Bindable.Linq.Helpers;
 using Bindable.Linq.Interfaces;
 
@@ -43,7 +44,7 @@ namespace Bindable.Linq
             where TSource : class
             where TResult : class
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             return source.Select(selector, dependencyAnalysisMode).UnionAll();
         }
 	}

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using Bindable.Core.Helpers;
 using Bindable.Linq.Helpers;
 using Bindable.Linq.Interfaces;
 
@@ -38,7 +39,7 @@ namespace Bindable.Linq
         /// <paramref name="source" /> is null.</exception>
         public static IBindable<TSource> FirstOrDefault<TSource>(this IBindableCollection<TSource> source)
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             return source.ElementAtOrDefault(0);
         }
 

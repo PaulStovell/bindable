@@ -32,7 +32,6 @@ namespace Bindable.Linq.Iterators
     /// </para>
     /// </remarks>
     public abstract class Iterator<TSource, TResult> : DispatcherBound, IBindableCollection<TResult>, IAcceptsDependencies
-        
     {
         private readonly StateScope _collectionChangedSuspendedState = new StateScope();
         private readonly List<IDependency> _dependencies = new List<IDependency>();
@@ -90,7 +89,7 @@ namespace Bindable.Linq.Iterators
         /// <summary>
         /// Gets the source collection.
         /// </summary>
-        protected IBindableCollection<TSource> SourceCollection
+        public IBindableCollection<TSource> SourceCollection
         {
             get { return _sourceCollection; }
         }
@@ -145,8 +144,8 @@ namespace Bindable.Linq.Iterators
             if (HasEvaluated == false)
             {
                 Seal();
-                HasEvaluated = true;
                 EvaluateSourceCollection();
+                HasEvaluated = true;
                 OnEvaluating(new EvaluatingEventArgs<TResult>(ResultCollection.EnumerateSafely()));
             }
         }
@@ -378,7 +377,7 @@ namespace Bindable.Linq.Iterators
         {
             AssertDispatcherThread();
             var handler = CollectionChanged;
-            if (handler != null && !CollectionChangedSuspendedState.IsWithin && !HasEvaluated) 
+            if (handler != null && !CollectionChangedSuspendedState.IsWithin && HasEvaluated) 
                 handler(this, e);
             OnPropertyChanged(CommonEventArgsCache.Count);
         }
@@ -392,6 +391,87 @@ namespace Bindable.Linq.Iterators
             {
                 dependency.Dispose();
             }
+        }
+
+        public object AddNew()
+        {
+            
+        }
+
+        public void CommitNew()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void CancelNew()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void RemoveAt(int index)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Remove(object item)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void EditItem(object item)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void CommitEdit()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void CancelEdit()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public NewItemPlaceholderPosition NewItemPlaceholderPosition
+        {
+            get { throw new System.NotImplementedException(); }
+            set { throw new System.NotImplementedException(); }
+        }
+
+        public bool CanAddNew
+        {
+            get { throw new System.NotImplementedException(); }
+        }
+
+        public bool IsAddingNew
+        {
+            get { throw new System.NotImplementedException(); }
+        }
+
+        public object CurrentAddItem
+        {
+            get { throw new System.NotImplementedException(); }
+        }
+
+        public bool CanRemove
+        {
+            get { throw new System.NotImplementedException(); }
+        }
+
+        public bool CanCancelEdit
+        {
+            get { throw new System.NotImplementedException(); }
+        }
+
+        public bool IsEditingItem
+        {
+            get { throw new System.NotImplementedException(); }
+        }
+
+        public object CurrentEditItem
+        {
+            get { throw new System.NotImplementedException(); }
         }
     }
 }

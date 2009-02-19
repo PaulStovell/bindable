@@ -5,7 +5,6 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
-using Bindable.Aspects.Parameters;
 using Bindable.Core.Helpers;
 using Bindable.Linq.Dependencies.Observers;
 using Bindable.Linq.Helpers;
@@ -39,11 +38,11 @@ namespace Bindable.Linq.Adapters.Outgoing
         /// </summary>
         /// <param name="source">The source.</param>
         /// <param name="dispatcher">The dispatcher.</param>
-        public BindingListAdapter([NotNull]IBindableCollection<TElement> source, IDispatcher dispatcher)
+        public BindingListAdapter(IBindableCollection<TElement> source, IDispatcher dispatcher)
             : base(dispatcher)
         {
-            source.ShouldNotBeNull("source");
-
+            Guard.NotNull(source, "source");
+            
             _originalSource = source;
 
             _eventHandler = Source_CollectionChanged;

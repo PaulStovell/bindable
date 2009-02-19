@@ -1,24 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Linq.Expressions;
-using System.Windows;
-using System.Windows.Threading;
-using Bindable.Linq.Adapters.Incoming;
-using Bindable.Linq.Adapters.Outgoing;
+﻿using Bindable.Core.Helpers;
 using Bindable.Linq.Aggregators;
-using Bindable.Linq.Aggregators.Numerics;
-using Bindable.Linq.Collections;
-using Bindable.Linq.Configuration;
-using Bindable.Linq.Dependencies;
-using Bindable.Linq.Dependencies.Definitions;
-using Bindable.Linq.Helpers;
 using Bindable.Linq.Interfaces;
-using Bindable.Linq.Iterators;
-using Bindable.Linq.Operators;
-using Bindable.Core.Threading;
 
 namespace Bindable.Linq
 {
@@ -33,7 +15,7 @@ namespace Bindable.Linq
         /// <paramref name="source" /> is null.</exception>
         public static IBindable<TSource> ElementAtOrDefault<TSource>(this IBindableCollection<TSource> source, int index)
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             return new ElementAtAggregator<TSource>(source, index, source.Dispatcher);
         }
 	}

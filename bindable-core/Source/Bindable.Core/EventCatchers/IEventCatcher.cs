@@ -23,12 +23,12 @@ namespace Bindable.Core.EventCatchers
         /// <summary>
         /// Dequeues the next event.
         /// </summary>
-        CapturedEvent<TEventArgs> DequeueNextEvent();
+        CapturedEvent<TEventArgs> Dequeue();
 
         /// <summary>
         /// Dequeues up to the given number of events.
         /// </summary>
         /// <param name="count">The count.</param>
-        CapturedEvent<TEventArgs>[] DequeueNextEvents(int count);
+        CapturedEvent<TEventArgs>[] DequeueMany(int count);
     }
 }

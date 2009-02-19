@@ -84,6 +84,7 @@ namespace Bindable.Cms.Web.Application.Framework.NVelocitySupport
 
             var masterView = LocateAndPrepareView(controllerContext, masterPath);
             masterView.Context.Put("RequestedViewName", viewPath);
+            controllerContext.Controller.ViewData["RequestedViewName"] = viewPath;
             return new ViewEngineResult(masterView, this);
         }
 

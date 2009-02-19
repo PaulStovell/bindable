@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
+using Bindable.Core.Helpers;
 using Bindable.Linq.Aggregators.Numerics;
-using Bindable.Linq.Helpers;
 using Bindable.Linq.Interfaces;
 
 namespace Bindable.Linq
@@ -10,7 +10,7 @@ namespace Bindable.Linq
 	{
         private static IBindable<TElement> MaxInternal<TElement, TAverage>(IBindableCollection<TElement> source, INumeric<TElement, TAverage> numeric)
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             return Aggregate<TElement, TElement>(source, sources => numeric.Max(sources));
         }
 
@@ -135,7 +135,7 @@ namespace Bindable.Linq
         /// <paramref name="source" /> contains no elements.</exception>
         public static IBindable<decimal> Max<TSource>(this IBindableCollection<TSource> source, Expression<Func<TSource, decimal>> selector) where TSource : class
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             return source.Select(selector).Max();
         }
 
@@ -150,7 +150,7 @@ namespace Bindable.Linq
         /// <paramref name="source" /> contains no elements.</exception>
         public static IBindable<double> Max<TSource>(this IBindableCollection<TSource> source, Expression<Func<TSource, double>> selector) where TSource : class
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             return source.Select(selector).Max();
         }
 
@@ -163,7 +163,7 @@ namespace Bindable.Linq
         /// <paramref name="source" /> or <paramref name="selector" /> is null.</exception>
         public static IBindable<decimal?> Max<TSource>(this IBindableCollection<TSource> source, Expression<Func<TSource, decimal?>> selector) where TSource : class
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             return source.Select(selector).Max();
         }
 
@@ -176,7 +176,7 @@ namespace Bindable.Linq
         /// <paramref name="source" /> or <paramref name="selector" /> is null.</exception>
         public static IBindable<double?> Max<TSource>(this IBindableCollection<TSource> source, Expression<Func<TSource, double?>> selector) where TSource : class
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             return source.Select(selector).Max();
         }
 
@@ -191,7 +191,7 @@ namespace Bindable.Linq
         /// <paramref name="source" /> contains no elements.</exception>
         public static IBindable<int> Max<TSource>(this IBindableCollection<TSource> source, Expression<Func<TSource, int>> selector) where TSource : class
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             return source.Select(selector).Max();
         }
 
@@ -204,7 +204,7 @@ namespace Bindable.Linq
         /// <paramref name="source" /> or <paramref name="selector" /> is null.</exception>
         public static IBindable<int?> Max<TSource>(this IBindableCollection<TSource> source, Expression<Func<TSource, int?>> selector) where TSource : class
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             return source.Select(selector).Max();
         }
 
@@ -217,7 +217,7 @@ namespace Bindable.Linq
         /// <paramref name="source" /> or <paramref name="selector" /> is null.</exception>
         public static IBindable<long?> Max<TSource>(this IBindableCollection<TSource> source, Expression<Func<TSource, long?>> selector) where TSource : class
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             return source.Select(selector).Max();
         }
 
@@ -232,7 +232,7 @@ namespace Bindable.Linq
         /// <paramref name="source" /> contains no elements.</exception>
         public static IBindable<long> Max<TSource>(this IBindableCollection<TSource> source, Expression<Func<TSource, long>> selector) where TSource : class
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             return source.Select(selector).Max();
         }
 
@@ -245,7 +245,7 @@ namespace Bindable.Linq
         /// <paramref name="source" /> or <paramref name="selector" /> is null.</exception>
         public static IBindable<float?> Max<TSource>(this IBindableCollection<TSource> source, Expression<Func<TSource, float?>> selector) where TSource : class
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             return source.Select(selector).Max();
         }
 
@@ -260,7 +260,7 @@ namespace Bindable.Linq
         /// <paramref name="source" /> contains no elements.</exception>
         public static IBindable<float> Max<TSource>(this IBindableCollection<TSource> source, Expression<Func<TSource, float>> selector) where TSource : class
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             return source.Select(selector).Max();
         }
 	}

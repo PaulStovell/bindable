@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Bindable.Aspects.Parameters;
+using Bindable.Core.Helpers;
 using Bindable.Core.Threading;
 using Bindable.Linq.Interfaces;
 
@@ -21,10 +21,11 @@ namespace Bindable.Linq.Operators
         /// </summary>
         /// <param name="source">The source.</param>
         /// <param name="dispatcher">The dispatcher.</param>
-        public SwitchOperator([NotNull]IBindable<TSource> source, [NotNull]IDispatcher dispatcher)
+        public SwitchOperator(IBindable<TSource> source, IDispatcher dispatcher)
             : base(source, dispatcher)
         {
-            
+            Guard.NotNull(source, "source");
+            Guard.NotNull(dispatcher, "dispatcher");
         }
 
         /// <summary>
@@ -32,8 +33,9 @@ namespace Bindable.Linq.Operators
         /// </summary>
         /// <param name="customCase">The custom case.</param>
         /// <returns></returns>
-        public ISwitch<TSource, TResult> AddCase([NotNull]ISwitchCase<TSource, TResult> customCase)
+        public ISwitch<TSource, TResult> AddCase(ISwitchCase<TSource, TResult> customCase)
         {
+            Guard.NotNull(customCase, "customCase");
             _conditionalCases.Add(customCase);
             return this;
         }

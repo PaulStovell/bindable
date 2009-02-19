@@ -67,7 +67,7 @@ namespace Bindable.Cms.Web
 
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(ApplicationService.Current.Resolve<IViewEngine>());
-            ControllerBuilder.Current.SetControllerFactory(typeof(WindsorControllerFactory));
+            ControllerBuilder.Current.SetControllerFactory(ApplicationService.Current.RegisterAndResolve<WindsorControllerFactory>(Lifetime.Singleton));
             RegisterRoutes(RouteTable.Routes);
         }
 

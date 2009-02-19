@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using Bindable.Core.Helpers;
 using Bindable.Linq.Helpers;
 using Bindable.Linq.Interfaces;
 
@@ -19,8 +20,8 @@ namespace Bindable.Linq
         /// </returns>
         public static IBindable<bool> All<TSource>(this IBindableCollection<TSource> source, Expression<Func<TSource, bool>> predicate) where TSource : class
         {
-            source.ShouldNotBeNull("source");
-            predicate.ShouldNotBeNull("predicate");
+            Guard.NotNull(source, "source");
+            Guard.NotNull(predicate, "predicate");
             return source.Where(predicate).Count()
                 .Switch()
                     .Case(count => count >= 1, true)

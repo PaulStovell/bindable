@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using Bindable.Aspects.Parameters;
 using Bindable.Core.Helpers;
 using Bindable.Core.Threading;
 using Bindable.Linq.Interfaces;
@@ -20,9 +19,10 @@ namespace Bindable.Linq.Adapters.Incoming
         /// </summary>
         /// <param name="sourceCollection">The source collection.</param>
         /// <param name="dispatcher">The dispatcher.</param>
-        public BindingListToBindableCollectionAdapter([NotNull]IEnumerable sourceCollection, IDispatcher dispatcher) 
+        public BindingListToBindableCollectionAdapter(IEnumerable sourceCollection, IDispatcher dispatcher) 
             : base(sourceCollection, dispatcher)
         {
+            Guard.NotNull(sourceCollection, "sourceCollection");
             var observable = (IBindingList)sourceCollection;
             observable.ListChanged += Weak.Event<ListChangedEventArgs>((sender, e) => Dispatcher.Dispatch(() => SourceCollection_ListChanged(sender, e))).KeepAlive(InstanceLifetime).HandlerProxy.Handler;
         }

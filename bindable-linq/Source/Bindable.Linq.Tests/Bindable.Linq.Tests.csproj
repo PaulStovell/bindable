@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5E80C227-45CA-4390-B5A7-2D57E7A49506}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bindable.Linq.Tests</RootNamespace>
+    <AssemblyName>Bindable.Linq.Tests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gallio, Version=3.0.5.546, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bindable-dependencies\MbUnit\Gallio.dll</HintPath>
+    </Reference>
+    <Reference Include="Gallio.Ambience, Version=3.0.5.546, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bindable-dependencies\MbUnit\Gallio.Ambience.dll</HintPath>
+    </Reference>
+    <Reference Include="Gallio.MbUnit2Adapter, Version=3.0.5.546, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bindable-dependencies\MbUnit\Gallio.MbUnit2Adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit.Framework, Version=2.4.2.175, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bindable-dependencies\MbUnit\MbUnit.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit.Framework.2.0, Version=2.4.2.175, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bindable-dependencies\MbUnit\MbUnit.Framework.2.0.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph, Version=2.4.2.175, Culture=neutral, PublicKeyToken=975e84d0c8d6464d">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bindable-dependencies\MbUnit\QuickGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Algorithms, Version=2.4.2.175, Culture=neutral, PublicKeyToken=975e84d0c8d6464d">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bindable-dependencies\MbUnit\QuickGraph.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="Refly, Version=2.4.2.175, Culture=neutral, PublicKeyToken=829676e11975a31c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bindable-dependencies\MbUnit\Refly.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TestFu, Version=2.4.2.175, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bindable-dependencies\MbUnit\TestFu.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behavior\Aggregators\CustomAggregatorTests.cs" />
+    <Compile Include="Behavior\Iterators\CastBehavior.cs" />
+    <Compile Include="Behavior\Iterators\ConcatBehavior.cs" />
+    <Compile Include="Behavior\Iterators\DistinctBehavior.cs" />
+    <Compile Include="Behavior\Iterators\SelectBehavior.cs" />
+    <Compile Include="Behavior\Iterators\UnionAllBehavior.cs" />
+    <Compile Include="Behavior\Iterators\UnionBehavior.cs" />
+    <Compile Include="Behavior\Iterators\WhereBehavior.cs" />
+    <Compile Include="MockObjectModel\BindableObject.cs" />
+    <Compile Include="MockObjectModel\Contact.cs" />
+    <Compile Include="MockObjectModel\ContactSummary.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestLanguage\EventSpecifications.cs" />
+    <Compile Include="TestLanguage\Expectations.cs" />
+    <Compile Include="TestLanguage\Expectations\CountExpectation.cs" />
+    <Compile Include="TestLanguage\Expectations\CurrentValueExpectation.cs" />
+    <Compile Include="TestLanguage\Expectations\IExpectation.cs" />
+    <Compile Include="TestLanguage\Expectations\PropertyValueExpectation.cs" />
+    <Compile Include="TestLanguage\Expectations\RaiseCollectionEventExpectation.cs" />
+    <Compile Include="TestLanguage\Expectations\RaisePropertyEventExpectation.cs" />
+    <Compile Include="TestLanguage\Helpers\CompatabilityLevel.cs" />
+    <Compile Include="TestLanguage\Helpers\CompatabilityValidator.cs" />
+    <Compile Include="TestLanguage\Helpers\Extensions.cs" />
+    <Compile Include="TestLanguage\Helpers\TestFixture.cs" />
+    <Compile Include="TestLanguage\Helpers\Tracer.cs" />
+    <Compile Include="TestLanguage\IScenario.cs" />
+    <Compile Include="TestLanguage\Scenario.cs" />
+    <Compile Include="TestLanguage\Specification.cs" />
+    <Compile Include="TestLanguage\Specifications\FullSpecification.cs" />
+    <Compile Include="TestLanguage\Specifications\UntypedSpecification.cs" />
+    <Compile Include="TestLanguage\Steps\InputAwareStep.cs" />
+    <Compile Include="TestLanguage\Steps\ReplaceStep.cs" />
+    <Compile Include="TestLanguage\Steps\SimpleStep.cs" />
+    <Compile Include="TestLanguage\Steps\Step.cs" />
+    <Compile Include="TestLanguage\Upon.cs" />
+    <Compile Include="TestLanguage\With.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\bindable-core\Source\Bindable.Core\Bindable.Core.csproj">
+      <Project>{6EB498B0-4DFA-45B2-9420-532C4D7B0410}</Project>
+      <Name>Bindable.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bindable.Linq\Bindable.Linq.csproj">
+      <Project>{C5A76854-BCE0-4E82-9DD0-A7DB3C834EBE}</Project>
+      <Name>Bindable.Linq</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Behavior\Dependencies\" />
+    <Folder Include="Behavior\Operators\" />
+    <Folder Include="Unit\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

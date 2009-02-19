@@ -1,5 +1,4 @@
 ﻿using System;
-using Bindable.Aspects.Parameters;
 using Bindable.Core.Helpers;
 using Bindable.Core.Threading;
 
@@ -19,8 +18,9 @@ namespace Bindable.Core
         /// Initializes a new instance of the <see cref="DispatcherBound"/> class.
         /// </summary>
         /// <param name="dispatcher">The dispatcher.</param>
-        protected DispatcherBound([NotNull]IDispatcher dispatcher)
+        protected DispatcherBound(IDispatcher dispatcher)
         {
+            Guard.NotNull(dispatcher, "dispatcher");
             _dispatcher = dispatcher;
         }
 

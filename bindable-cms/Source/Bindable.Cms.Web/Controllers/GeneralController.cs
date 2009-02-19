@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using Bindable.Cms.Domain.Model;
 
 namespace Bindable.Cms.Web.Controllers
 {
@@ -8,26 +7,21 @@ namespace Bindable.Cms.Web.Controllers
     {
         public ActionResult Index()
         {
-            ViewData["NavigationGroup"] = "Home";
-            ViewData["Megazoid"] = new Comment() {AuthorEmail = "paul@paulstovell.com"};
             return View();
         }
 
         public ActionResult Projects()
         {
-            ViewData["NavigationGroup"] = "Projects";
             return View();
         }
 
         public ActionResult Presentations()
         {
-            ViewData["NavigationGroup"] = "Presentations";
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewData["NavigationGroup"] = "Contact";
             return View();
         }
     }

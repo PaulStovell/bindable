@@ -1,0 +1,8 @@
+﻿<Window x:Class="Samples.PointOfSale.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Sale="clr-namespace:Samples.PointOfSale.Views.Sale"
+    Title="Window1" Height="600" Width="800"
+    >
+    <Sale:SaleView />
+</Window>

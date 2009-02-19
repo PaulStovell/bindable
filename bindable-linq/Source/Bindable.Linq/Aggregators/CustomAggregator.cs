@@ -1,5 +1,5 @@
 using System;
-using Bindable.Aspects.Parameters;
+using Bindable.Core.Helpers;
 using Bindable.Linq.Interfaces;
 using Bindable.Core.Threading;
 
@@ -20,9 +20,13 @@ namespace Bindable.Linq.Aggregators
         /// <param name="source">The source.</param>
         /// <param name="aggregator">The aggregator.</param>
         /// <param name="dispatcher">The dispatcher.</param>
-        public CustomAggregator([NotNull]IBindableCollection<TSource> source, [NotNull]Func<IBindableCollection<TSource>, TAccumulate> aggregator, [NotNull]IDispatcher dispatcher)
+        public CustomAggregator(IBindableCollection<TSource> source, Func<IBindableCollection<TSource>, TAccumulate> aggregator, IDispatcher dispatcher)
             : base(source, dispatcher)
         {
+            Guard.NotNull(source, "source");
+            Guard.NotNull(aggregator, "aggregator");
+            Guard.NotNull(dispatcher, "dispatcher");
+            
             _aggregator = aggregator;
         }
 

@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using Bindable.Aspects.Parameters;
 using Bindable.Core.Helpers;
 using Bindable.Linq.Dependencies;
 using Bindable.Linq.Helpers;
@@ -24,9 +23,10 @@ namespace Bindable.Linq.Adapters.Incoming
         private readonly IEnumerable _sourceCollection;
         private bool _hasEvaluated;
 
-        protected BindableCollectionAdapterBase([NotNull]IEnumerable sourceCollection, IDispatcher dispatcher)
+        protected BindableCollectionAdapterBase(IEnumerable sourceCollection, IDispatcher dispatcher)
             : base(dispatcher)
         {
+            Guard.NotNull(sourceCollection, "sourceCollection");
             _sourceCollection = sourceCollection;
         }
 
@@ -156,7 +156,7 @@ namespace Bindable.Linq.Adapters.Incoming
                     }
                     else if (element != null)
                     {
-                        throw new InvalidCastException("Could not cast object of type {0} to type {1}".FormatWith(element.GetType(), typeof (TElement)));
+                        throw new InvalidCastException(string.Format("Could not cast object of type {0} to type {1}", element.GetType(), typeof (TElement)));
                     }
                 }
 
@@ -200,8 +200,9 @@ namespace Bindable.Linq.Adapters.Incoming
         /// Sets a new dependency on a Bindable LINQ operation.
         /// </summary>
         /// <param name="definition">A definition of the dependency.</param>
-        public void AcceptDependency([NotNull]IDependencyDefinition definition)
+        public void AcceptDependency(IDependencyDefinition definition)
         {
+            Guard.NotNull(definition, "definition");
             throw new NotSupportedException("This object cannot accept dependencies directly.");
         }
 

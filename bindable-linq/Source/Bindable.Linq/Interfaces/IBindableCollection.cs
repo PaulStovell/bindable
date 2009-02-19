@@ -12,7 +12,7 @@ namespace Bindable.Linq.Interfaces
     /// <summary>
     /// An interface implemented by all Bindable LINQ bindable collections.
     /// </summary>
-    public interface IBindableCollection : IEnumerable, IRefreshable, INotifyCollectionChanged, INotifyPropertyChanged, IAcceptsDependencies, IDisposable
+    public interface IBindableCollection : IEnumerable, IRefreshable, INotifyCollectionChanged, INotifyPropertyChanged, IAcceptsDependencies, IDisposable, IEditableCollectionView
     {
         /// <summary>
         /// Gets the dispatcher.

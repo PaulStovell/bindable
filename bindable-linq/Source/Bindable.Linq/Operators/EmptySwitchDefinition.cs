@@ -1,9 +1,8 @@
 using System.ComponentModel;
-using Bindable.Aspects.Parameters;
 using Bindable.Core;
-using Bindable.Linq.Helpers;
-using Bindable.Linq.Interfaces;
+using Bindable.Core.Helpers;
 using Bindable.Core.Threading;
+using Bindable.Linq.Interfaces;
 
 namespace Bindable.Linq.Operators
 {
@@ -20,9 +19,10 @@ namespace Bindable.Linq.Operators
         /// </summary>
         /// <param name="source">The source.</param>
         /// <param name="dispatcher">The dispatcher.</param>
-        public EmptySwitchDefinition([NotNull]IBindable<TSource> source, [NotNull]IDispatcher dispatcher)
+        public EmptySwitchDefinition(IBindable<TSource> source, IDispatcher dispatcher)
             : base(dispatcher)
         {
+            Guard.NotNull(source, "source");
             _source = source;
         }
 

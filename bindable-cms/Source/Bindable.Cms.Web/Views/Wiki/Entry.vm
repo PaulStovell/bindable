@@ -1,4 +1,5 @@
 ﻿[Title]$Entry.Wiki.Name - $Entry.Title[/Title]
+[Tab]$Entry.Wiki.Name[/Tab]
 
 [Introduction]
     <h2>Summary</h2>

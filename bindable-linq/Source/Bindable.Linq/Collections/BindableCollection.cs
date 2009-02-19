@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Globalization;
-using Bindable.Aspects.Parameters;
+using Bindable.Core.Helpers;
 using Bindable.Linq.Dependencies;
 using Bindable.Linq.Helpers;
 using Bindable.Linq.Interfaces;
@@ -31,7 +31,7 @@ namespace Bindable.Linq.Collections
         /// <summary>
         /// Initializes a new instance of the <see cref="BindableCollection&lt;TElement&gt;"/> class.
         /// </summary>
-        public BindableCollection([NotNull]IDispatcher dispatcher)
+        public BindableCollection(IDispatcher dispatcher)
             : base(dispatcher)
         {
             _innerList = new List<TElement>();

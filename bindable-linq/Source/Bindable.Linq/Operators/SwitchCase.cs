@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Bindable.Aspects.Parameters;
+using Bindable.Core.Helpers;
 
 namespace Bindable.Linq.Operators
 {
@@ -21,8 +21,10 @@ namespace Bindable.Linq.Operators
         /// </summary>
         /// <param name="inputCondition">The input condition.</param>
         /// <param name="resultExpression">The result expression.</param>
-        public SwitchCase([NotNull]Expression<Func<TInput, bool>> inputCondition, [NotNull]Expression<Func<TInput, TResult>> resultExpression)
+        public SwitchCase(Expression<Func<TInput, bool>> inputCondition, Expression<Func<TInput, TResult>> resultExpression)
         {
+            Guard.NotNull(inputCondition, "inputCondition");
+            Guard.NotNull(resultExpression, "resultExpression");
             _inputCondition = inputCondition;
             _resultExpression = resultExpression;
             _inputConditionCompiled = _inputCondition.Compile();

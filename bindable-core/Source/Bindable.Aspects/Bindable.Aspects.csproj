@@ -33,11 +33,11 @@
   <ItemGroup>
     <Reference Include="PostSharp.Laos, Version=1.0.11.424, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Dependencies\PostSharp\PostSharp.Laos.dll</HintPath>
+      <HintPath>..\..\..\bindable-dependencies\PostSharp\PostSharp.Laos.dll</HintPath>
     </Reference>
     <Reference Include="PostSharp.Public, Version=1.0.11.424, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Dependencies\PostSharp\PostSharp.Public.dll</HintPath>
+      <HintPath>..\..\..\bindable-dependencies\PostSharp\PostSharp.Public.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">

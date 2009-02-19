@@ -6,14 +6,21 @@ namespace Bindable.Cms.Web.Application.Framework
 {
     public class WindsorControllerFactory : IControllerFactory
     {
+        private readonly IApplicationService _applicationService;
+
+        public WindsorControllerFactory(IApplicationService applicationService)
+        {
+            _applicationService = applicationService;
+        }
+
         public IController CreateController(RequestContext requestContext, string controllerName)
         {
-            return (IController)ApplicationService.Current.Resolve(controllerName.ToLower() + "controller");
+            return (IController)_applicationService.Resolve(controllerName.ToLower() + "controller");
         }
 
         public void ReleaseController(IController controller)
         {
-            ApplicationService.Current.Release(controller);
+            _applicationService.Release(controller);
         }
     }
 }

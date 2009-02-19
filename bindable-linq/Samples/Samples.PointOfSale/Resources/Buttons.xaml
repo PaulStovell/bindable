@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="{x:Type Button}">
+        <Style.Resources>
+            <Storyboard x:Key="Button_Click">
+                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="{x:Null}" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                    <SplineColorKeyFrame KeyTime="00:00:00.1000000" Value="#FF3CDFE1"/>
+                    <SplineColorKeyFrame KeyTime="00:00:01" Value="#FF3C84E1"/>
+                </ColorAnimationUsingKeyFrames>
+                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="{x:Null}" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                    <SplineColorKeyFrame KeyTime="00:00:00.1000000" Value="#FF9FD0DF"/>
+                    <SplineColorKeyFrame KeyTime="00:00:01" Value="#FF739FF3"/>
+                </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+        </Style.Resources>
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="ButtonBase.Click">
+                <BeginStoryboard Storyboard="{StaticResource Button_Click}" x:Name="Button_Click_BeginStoryboard"/>
+            </EventTrigger>
+        </Style.Triggers>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF739FF3" Offset="0"/>
+                    <GradientStop Color="#FF3C6DE1" Offset="0.438"/>
+                    <GradientStop Color="#FF579CE5" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template" Value="{DynamicResource ButtonTemplate}"/>
+        <Setter Property="BorderThickness" Value="5,5,5,5"/>
+        <Setter Property="BorderBrush" Value="#FF142A5C"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Foreground" Value="#FF142A5C"/>
+    </Style>
+    
+    <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type Button}">
+        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" Padding="{TemplateBinding Padding}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5,5,5,5">
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+    </ControlTemplate>
+    
+</ResourceDictionary>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using Bindable.Core.Helpers;
 using Bindable.Linq.Helpers;
 using Bindable.Linq.Interfaces;
 using Bindable.Linq.Iterators;
@@ -69,8 +70,8 @@ namespace Bindable.Linq
         /// 	<paramref name="source"/> or <paramref name="selector"/> is null.</exception>
         public static IBindableCollection<TResult> Select<TSource, TResult>(this IBindableCollection<TSource> source, Expression<Func<TSource, TResult>> selector, DependencyDiscovery dependencyAnalysisMode) where TSource : class
         {
-            source.ShouldNotBeNull("source");
-            selector.ShouldNotBeNull("selector");
+            Guard.NotNull(source, "source");
+            Guard.NotNull(selector, "selector");
             var result = new SelectIterator<TSource, TResult>(source, selector.Compile(), source.Dispatcher);
             if (dependencyAnalysisMode == DependencyDiscovery.Enabled)
             {

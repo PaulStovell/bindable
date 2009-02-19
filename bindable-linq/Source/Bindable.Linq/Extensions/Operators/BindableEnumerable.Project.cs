@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using Bindable.Core.Helpers;
 using Bindable.Linq.Helpers;
 using Bindable.Linq.Interfaces;
 using Bindable.Linq.Operators;
@@ -38,8 +39,8 @@ namespace Bindable.Linq
         /// </returns>
         public static IBindable<TResult> Project<TSource, TResult>(this IBindable<TSource> source, Expression<Func<TSource, TResult>> projector, DependencyDiscovery dependencyAnalysisMode)
         {
-            source.ShouldNotBeNull("source");
-            projector.ShouldNotBeNull("projector");
+            Guard.NotNull(source, "source");
+            Guard.NotNull(projector, "projector");
             var result = new ProjectOperator<TSource, TResult>(source, projector.Compile(), source.Dispatcher);
             if (dependencyAnalysisMode == DependencyDiscovery.Enabled)
             {

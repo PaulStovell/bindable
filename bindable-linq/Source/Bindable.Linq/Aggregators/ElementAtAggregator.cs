@@ -1,4 +1,4 @@
-using Bindable.Aspects.Parameters;
+using Bindable.Core.Helpers;
 using Bindable.Core.Threading;
 using Bindable.Linq.Interfaces;
 
@@ -19,9 +19,11 @@ namespace Bindable.Linq.Aggregators
         /// <param name="source">The source.</param>
         /// <param name="index">The index.</param>
         /// <param name="dispatcher">The dispatcher.</param>
-        public ElementAtAggregator([NotNull]IBindableCollection<TElement> source, int index, [NotNull]IDispatcher dispatcher)
+        public ElementAtAggregator(IBindableCollection<TElement> source, int index, IDispatcher dispatcher)
             : base(source, dispatcher)
         {
+            Guard.NotNull(source, "source");
+            Guard.NotNull(dispatcher, "dispatcher");
             _index = index;
             _default = default(TElement);
         }

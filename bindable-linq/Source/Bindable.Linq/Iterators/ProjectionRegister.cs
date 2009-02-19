@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Bindable.Core.Helpers;
 using Bindable.Linq.Helpers;
 
 namespace Bindable.Linq.Iterators
@@ -76,7 +77,7 @@ namespace Bindable.Linq.Iterators
         /// <returns></returns>
         private object InnerGetExistingProjection(TSource source)
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             object result = null;
             if (source != null)
             {

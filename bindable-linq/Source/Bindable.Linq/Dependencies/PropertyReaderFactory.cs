@@ -38,7 +38,7 @@ namespace Bindable.Linq.Helpers
                         var propertyGetterMethodInfo = propertyInfo.GetGetMethod();
                         if (propertyGetterMethodInfo == null)
                         {
-                            throw new ArgumentException("The property '{0}' on type '{1}' does not contain a getter which could be accessed by the SyncLINQ binding infrastructure.".FormatWith(propertyName, propertyInfo.DeclaringType));
+                            throw new ArgumentException(string.Format("The property '{0}' on type '{1}' does not contain a getter which could be accessed by the Bindable LINQ binding infrastructure.", propertyName, propertyInfo.DeclaringType));
                         }
                         var propertyGetterDelegate = Delegate.CreateDelegate(delegateReaderType, propertyGetterMethodInfo);
                         result = (IPropertyReader<TCast>) Activator.CreateInstance(readerType, propertyGetterDelegate);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using Bindable.Core.Helpers;
 using Bindable.Linq.Helpers;
 using Bindable.Linq.Interfaces;
 using Bindable.Linq.Iterators;
@@ -44,8 +45,8 @@ namespace Bindable.Linq
         /// 	<paramref name="source"/> or <paramref name="predicate"/> is null.</exception>
         public static IBindableCollection<TSource> Where<TSource>(this IBindableCollection<TSource> source, Expression<Func<TSource, bool>> predicate, DependencyDiscovery dependencyAnalysisMode) where TSource : class
         {
-            source.ShouldNotBeNull("source");
-            predicate.ShouldNotBeNull("predicate");
+            Guard.NotNull(source, "source");
+            Guard.NotNull(predicate, "predicate");
             var result = new WhereIterator<TSource>(source, predicate.Compile(), source.Dispatcher);
             if (dependencyAnalysisMode == DependencyDiscovery.Enabled)
             {

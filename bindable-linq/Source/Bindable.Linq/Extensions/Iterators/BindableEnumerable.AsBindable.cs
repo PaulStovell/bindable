@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Windows.Threading;
+using Bindable.Core.Helpers;
 using Bindable.Linq.Adapters.Incoming;
 using Bindable.Linq.Helpers;
 using Bindable.Linq.Interfaces;
@@ -167,9 +168,9 @@ namespace Bindable.Linq
 
         private static IBindableCollection<TSource> AsBindableInternal<TSource>(this IEnumerable source, IDispatcher dispatcher) where TSource : class
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
 #if SILVERLIGHT
-            dispatcher.ShouldNotBeNull("dispatcher");
+            Guard.NotNull(dispatcher, "dispatcher");
 #else
             if (dispatcher == null)
             {

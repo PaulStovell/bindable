@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using Bindable.Core.Helpers;
 using Bindable.Linq.Helpers;
 using Bindable.Linq.Interfaces;
 using Bindable.Linq.Iterators;
@@ -78,8 +79,8 @@ namespace Bindable.Linq
         /// 	<paramref name="source"/> or <paramref name="keySelector"/> is null.</exception>
         public static IOrderedBindableCollection<TSource> OrderBy<TSource, TKey>(this IBindableCollection<TSource> source, Expression<Func<TSource, TKey>> keySelector, IComparer<TKey> comparer, DependencyDiscovery dependencyAnalysisMode) where TSource : class
         {
-            source.ShouldNotBeNull("source");
-            keySelector.ShouldNotBeNull("keySelector");
+            Guard.NotNull(source, "source");
+            Guard.NotNull(keySelector, "keySelector");
             var result = new OrderByIterator<TSource, TKey>(source, new ItemSorter<TSource, TKey>(null, keySelector.Compile(), comparer, true), source.Dispatcher);
             if (dependencyAnalysisMode == DependencyDiscovery.Enabled)
             {

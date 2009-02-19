@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using Bindable.Core.Helpers;
 using Bindable.Linq.Helpers;
 using Bindable.Linq.Interfaces;
 
@@ -29,7 +30,7 @@ namespace Bindable.Linq
         /// <exception cref="T:System.OverflowException">The number of elements in <paramref name="source" /> is larger than <see cref="F:System.Int32.MaxValue" />.</exception>
         public static IBindable<int> Count<TSource>(this IBindableCollection<TSource> source, Expression<Func<TSource, bool>> predicate) where TSource : class
         {
-            predicate.ShouldNotBeNull("predicate");
+            Guard.NotNull(predicate, "predicate");
             return source.Where(predicate).Count();
         }
 	}

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using Bindable.Core.Helpers;
 using Bindable.Linq.Helpers;
 using Bindable.Linq.Interfaces;
 
@@ -15,7 +16,7 @@ namespace Bindable.Linq
         /// <returns>true if the source sequence contains any elements; otherwise, false.</returns>
         public static IBindable<bool> Any<TSource>(this IBindableCollection<TSource> source)
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             return source.Count()
                 .Switch()
                     .Case(count => count >= 1, true)
@@ -32,8 +33,8 @@ namespace Bindable.Linq
         /// <returns>true if any elements in the source sequence pass the test in the specified predicate; otherwise, false.</returns>
         public static IBindable<bool> Any<TSource>(this IBindableCollection<TSource> source, Expression<Func<TSource, bool>> predicate) where TSource : class
         {
-            source.ShouldNotBeNull("source");
-            predicate.ShouldNotBeNull("predicate");
+            Guard.NotNull(source, "source");
+            Guard.NotNull(predicate, "predicate");
             return source.Where(predicate).Any();
         }
 	}

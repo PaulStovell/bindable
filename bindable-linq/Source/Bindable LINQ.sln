@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindable.Linq", "Bindable.Linq\Bindable.Linq.csproj", "{C5A76854-BCE0-4E82-9DD0-A7DB3C834EBE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{64DFF881-F6C7-4849-8750-BB717371A049}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindable.Core", "..\..\bindable-core\Source\Bindable.Core\Bindable.Core.csproj", "{6EB498B0-4DFA-45B2-9420-532C4D7B0410}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindable.Core.Tests", "..\..\bindable-core\Source\Bindable.Core.Tests\Bindable.Core.Tests.csproj", "{6D5BFB3E-1F3D-4E05-BDB1-973C0134D75F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{928A1987-80D5-4D86-B35B-9E6A773C0A9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindable.Linq.Tests", "Bindable.Linq.Tests\Bindable.Linq.Tests.csproj", "{5E80C227-45CA-4390-B5A7-2D57E7A49506}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples.PointOfSale", "..\Samples\Samples.PointOfSale\Samples.PointOfSale.csproj", "{3B29F1D8-F8E1-4D69-871D-E3A8132A9639}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindable.Aspects", "..\..\bindable-core\Source\Bindable.Aspects\Bindable.Aspects.csproj", "{29AAF238-E9A9-4F5D-B440-FB162ED77207}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5A76854-BCE0-4E82-9DD0-A7DB3C834EBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5A76854-BCE0-4E82-9DD0-A7DB3C834EBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5A76854-BCE0-4E82-9DD0-A7DB3C834EBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5A76854-BCE0-4E82-9DD0-A7DB3C834EBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EB498B0-4DFA-45B2-9420-532C4D7B0410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EB498B0-4DFA-45B2-9420-532C4D7B0410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EB498B0-4DFA-45B2-9420-532C4D7B0410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EB498B0-4DFA-45B2-9420-532C4D7B0410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D5BFB3E-1F3D-4E05-BDB1-973C0134D75F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D5BFB3E-1F3D-4E05-BDB1-973C0134D75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D5BFB3E-1F3D-4E05-BDB1-973C0134D75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D5BFB3E-1F3D-4E05-BDB1-973C0134D75F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E80C227-45CA-4390-B5A7-2D57E7A49506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E80C227-45CA-4390-B5A7-2D57E7A49506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E80C227-45CA-4390-B5A7-2D57E7A49506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E80C227-45CA-4390-B5A7-2D57E7A49506}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B29F1D8-F8E1-4D69-871D-E3A8132A9639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B29F1D8-F8E1-4D69-871D-E3A8132A9639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B29F1D8-F8E1-4D69-871D-E3A8132A9639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B29F1D8-F8E1-4D69-871D-E3A8132A9639}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29AAF238-E9A9-4F5D-B440-FB162ED77207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29AAF238-E9A9-4F5D-B440-FB162ED77207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29AAF238-E9A9-4F5D-B440-FB162ED77207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29AAF238-E9A9-4F5D-B440-FB162ED77207}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6EB498B0-4DFA-45B2-9420-532C4D7B0410} = {64DFF881-F6C7-4849-8750-BB717371A049}
+		{6D5BFB3E-1F3D-4E05-BDB1-973C0134D75F} = {64DFF881-F6C7-4849-8750-BB717371A049}
+		{29AAF238-E9A9-4F5D-B440-FB162ED77207} = {64DFF881-F6C7-4849-8750-BB717371A049}
+		{3B29F1D8-F8E1-4D69-871D-E3A8132A9639} = {928A1987-80D5-4D86-B35B-9E6A773C0A9D}
+	EndGlobalSection
+EndGlobal

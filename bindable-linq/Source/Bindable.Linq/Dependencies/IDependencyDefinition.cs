@@ -8,7 +8,7 @@ namespace Bindable.Linq.Dependencies
     /// This interface is implemented by items that represent a dependency.
     /// </summary>
     /// <remarks>
-    /// Dependency definitions follow the visitor pattern. All SyncLINQ operations implement the 
+    /// Dependency definitions follow the visitor pattern. All Bindable LINQ operations implement the 
     /// <see cref="IDependencyDefinition"/> interface, which allows you to pass dependency definitions to them. 
     /// Depending on the type of the operation, the dependency will ask you to either construct the dependency for 
     /// a collection of items (in the case of Aggregators or Iterators), or for a single object (in the case of 

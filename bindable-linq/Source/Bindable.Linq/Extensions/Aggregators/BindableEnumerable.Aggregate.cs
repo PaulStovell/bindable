@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using Bindable.Core.Helpers;
 using Bindable.Linq.Aggregators;
 using Bindable.Linq.Helpers;
 using Bindable.Linq.Interfaces;
@@ -93,8 +94,8 @@ namespace Bindable.Linq
         /// <returns>The final accumulator value.</returns>
         public static IBindable<TResult> Aggregate<TSource, TResult>(this IBindableCollection<TSource> source, Expression<Func<IBindableCollection<TSource>, TResult>> func, DependencyDiscovery dependencyAnalysisMode)
         {
-            source.ShouldNotBeNull("source");
-            func.ShouldNotBeNull("func");
+            Guard.NotNull(source, "source");
+            Guard.NotNull(func, "func");
             var result = new CustomAggregator<TSource, TResult>(source, func.Compile(), source.Dispatcher);
             if (dependencyAnalysisMode == DependencyDiscovery.Enabled)
             {
@@ -116,9 +117,9 @@ namespace Bindable.Linq
         /// <returns>The final accumulator value.</returns>
         public static IBindable<TAccumulate> Aggregate<TSource, TAccumulate>(this IBindableCollection<TSource> source, TAccumulate seed, Expression<Func<TAccumulate, TSource, TAccumulate>> func, DependencyDiscovery dependencyAnalysisMode)
         {
-            source.ShouldNotBeNull("source");
-            func.ShouldNotBeNull("func");
-            seed.ShouldNotBeNull("seed");
+            Guard.NotNull(source, "source");
+            Guard.NotNull(func, "func");
+            Guard.NotNull(seed, "seed");
 
             var compiledAccumulator = func.Compile();
             var function = new Func<IBindableCollection<TSource>, TAccumulate>(

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using Bindable.Core.Helpers;
 using Bindable.Linq.Aggregators.Numerics;
 using Bindable.Linq.Helpers;
 using Bindable.Linq.Interfaces;
@@ -10,7 +11,7 @@ namespace Bindable.Linq
 	{
         private static IBindable<TElement> MinInternal<TElement, TAverage>(IBindableCollection<TElement> source, INumeric<TElement, TAverage> numeric)
         {
-            source.ShouldNotBeNull("source");
+            Guard.NotNull(source, "source");
             return Aggregate<TElement, TElement>(source, sources => numeric.Min(sources));
         }
 

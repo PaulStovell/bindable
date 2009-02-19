@@ -206,9 +206,9 @@ namespace Bindable.Linq
             where TSource : class
             where TElement : class
         {
-            source.ShouldNotBeNull("source");
-            keySelector.ShouldNotBeNull("keySelector");
-            elementSelector.ShouldNotBeNull("elementSelector");
+            Guard.NotNull(source, "source");
+            Guard.NotNull(keySelector, "keySelector");
+            Guard.NotNull(elementSelector, "elementSelector");
             var result = new GroupByIterator<TKey, TSource, TElement>(source, keySelector, elementSelector, comparer, source.Dispatcher);
             if (dependencyAnalysisMode == DependencyDiscovery.Enabled)
             {

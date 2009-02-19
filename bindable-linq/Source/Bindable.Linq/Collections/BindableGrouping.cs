@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using Bindable.Aspects.Parameters;
 using Bindable.Core;
+using Bindable.Core.Helpers;
 using Bindable.Core.Threading;
 using Bindable.Linq.Dependencies;
 using Bindable.Linq.Interfaces;
@@ -29,9 +29,10 @@ namespace Bindable.Linq.Collections
         /// <param name="key">The key.</param>
         /// <param name="groupWhereQuery">The group query.</param>
         /// <param name="dispatcher">The dispatcher.</param>
-        public BindableGrouping(TKey key, [NotNull]IBindableCollection<TElement> groupWhereQuery, [NotNull]IDispatcher dispatcher)
+        public BindableGrouping(TKey key, IBindableCollection<TElement> groupWhereQuery, IDispatcher dispatcher)
             : base(dispatcher)
         {
+            Guard.NotNull(groupWhereQuery, "groupWhereQuery");
             _key = key;
             _groupWhereQuery = groupWhereQuery;
             _groupWhereQuery.Evaluating += (sender, e) => OnEvaluating(e);
@@ -134,8 +135,9 @@ namespace Bindable.Linq.Collections
         /// Sets a new dependency on a Bindable LINQ operation.
         /// </summary>
         /// <param name="definition">A definition of the dependency.</param>
-        public void AcceptDependency([NotNull]IDependencyDefinition definition)
+        public void AcceptDependency(IDependencyDefinition definition)
         {
+            Guard.NotNull(definition, "definition");
             throw new NotSupportedException("This object cannot accept dependencies directly");
         }
 

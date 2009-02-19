@@ -13,15 +13,6 @@ namespace Bindable.Cms.Domain.Repositories.NHibernate
         {
         }
 
-        public void SaveEntry(Entry entry)
-        {
-            using (var transaction = Session.BeginTransaction(IsolationLevel.Serializable))
-            {
-                Session.SaveOrUpdate(entry);
-                transaction.Commit();
-            }
-        }
-
         public Entry FindEntry(string wikiName, string entryName)
         {
             return Session.CreateCriteria(typeof (Entry), "entry")
@@ -30,6 +21,15 @@ namespace Bindable.Cms.Domain.Repositories.NHibernate
                 .Add(Restrictions.Eq("wiki.Name", wikiName))
                 .SetCacheMode(CacheMode.Refresh)
                 .UniqueResult<Entry>();
+        }
+
+        public void SaveEntry(Entry entry)
+        {
+            using (var transaction = Session.BeginTransaction(IsolationLevel.Serializable))
+            {
+                Session.SaveOrUpdate(entry);
+                transaction.Commit();
+            }
         }
     }
 }

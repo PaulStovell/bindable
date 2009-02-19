@@ -2,15 +2,17 @@ using System;
 using System.Threading;
 using Bindable.Core.Threading;
 using System.Collections.Generic;
+using System.Diagnostics;
 
-namespace Bindable.Tests.Linq.TestLanguage.Helpers
+namespace Bindable.Core.Threading
 {
     /// <summary>
     /// Represents an <see cref="IDispatcher"/> used for tests. Since test frameworks
     /// do not have message pumps normally used by dispatchers, the event is simply 
     /// invoked on a new thread.
     /// </summary>
-    internal class TestDispatcher : IDispatcher
+    [DebuggerNonUserCode]
+    public class TestDispatcher : IDispatcher
     {
         private readonly List<Thread> _dispatcherThreads = new List<Thread>();
         private readonly Thread _creationThread = Thread.CurrentThread;

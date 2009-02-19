@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using Bindable.Aspects.Parameters;
 using Bindable.Core.Helpers;
 using Bindable.Linq.Configuration;
 using Bindable.Linq.Dependencies;
@@ -32,9 +31,11 @@ namespace Bindable.Linq.Aggregators
         /// </summary>
         /// <param name="sourceCollection">The source collection.</param>
         /// <param name="dispatcher">The dispatcher.</param>
-        protected Aggregator([NotNull]IBindableCollection<TSource> sourceCollection, [NotNull]IDispatcher dispatcher)
+        protected Aggregator(IBindableCollection<TSource> sourceCollection, IDispatcher dispatcher)
             : base(dispatcher)
         {
+            Guard.NotNull(sourceCollection, "sourceCollection");
+            Guard.NotNull(dispatcher, "dispatcher");
             _sourceCollection = sourceCollection;
             _sourceCollection.CollectionChanged += Weak.Event<NotifyCollectionChangedEventArgs>((sender, e) => Dispatcher.Dispatch(ReEvaluate)).KeepAlive(InstanceLifetime).HandlerProxy.Handler;
         }
@@ -115,8 +116,9 @@ namespace Bindable.Linq.Aggregators
         /// Sets a new dependency on a Bindable LINQ operation.
         /// </summary>
         /// <param name="definition">A definition of the dependency.</param>
-        public void AcceptDependency([NotNull]IDependencyDefinition definition)
+        public void AcceptDependency(IDependencyDefinition definition)
         {
+            Guard.NotNull(definition, "definition");
             if (definition.AppliesToCollections())
             {
                 var dependency = definition.ConstructForCollection(_sourceCollection, BindingConfigurations.Default.CreatePathNavigator());

@@ -129,7 +129,6 @@
     <Compile Include="Application\ContentManagement\Markup\ParagraphFormatter.cs" />
     <Compile Include="Application\ContentManagement\Markup\QuoteFormatter.cs" />
     <Compile Include="Application\ContentManagement\Markup\TableFormatter.cs" />
-    <Compile Include="Application\Extensions\EnglishExtensions.cs" />
     <Compile Include="Application\Extensions\HtmlExtensions.cs" />
     <Compile Include="Application\Extensions\RoutingExtensions.cs" />
     <Compile Include="Application\Framework\NVelocitySupport\DynamicDispatchMethod.cs" />
@@ -246,6 +245,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Attachments\PaulStovell.vcf" />
+    <EmbeddedResource Include="Views\General\Contact.vm" />
     <EmbeddedResource Include="Views\Wiki\NotFound.vm" />
     <EmbeddedResource Include="Views\Partials\Discussion.vm" />
     <EmbeddedResource Include="Views\General\Index.vm" />

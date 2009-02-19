@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.ComponentModel;
-using Bindable.Aspects.Parameters;
 using Bindable.Core.Helpers;
 using Bindable.Linq.Configuration;
 using Bindable.Linq.Dependencies;
@@ -31,9 +30,11 @@ namespace Bindable.Linq.Operators
         /// </summary>
         /// <param name="dispatcher">The dispatcher.</param>
         /// <param name="source">The source.</param>
-        protected Operator([NotNull]IBindable<TSource> source, [NotNull]IDispatcher dispatcher)
+        protected Operator(IBindable<TSource> source, IDispatcher dispatcher)
             : base(dispatcher)
         {
+            Guard.NotNull(source, "source");
+            Guard.NotNull(dispatcher, "dispatcher");
             _source = source;
             _source.PropertyChanged += Weak.Event<PropertyChangedEventArgs>((sender, e) => Dispatcher.Dispatch(Refresh)).KeepAlive(InstanceLifetime).HandlerProxy.Handler;
         }
@@ -98,7 +99,7 @@ namespace Bindable.Linq.Operators
             {
                 return _hasEvaluated;
             }
-            set
+            private set
             {
                 AssertDispatcherThread();
                 _hasEvaluated = value;
@@ -121,8 +122,9 @@ namespace Bindable.Linq.Operators
         /// Sets a new dependency on a Bindable LINQ operation.
         /// </summary>
         /// <param name="definition">A definition of the dependency.</param>
-        public void AcceptDependency([NotNull]IDependencyDefinition definition)
+        public void AcceptDependency(IDependencyDefinition definition)
         {
+            Guard.NotNull(definition, "definition");
             if (definition.AppliesToSingleElement())
             {
                 var dependency = definition.ConstructForElement(_source, BindingConfigurations.Default.CreatePathNavigator());

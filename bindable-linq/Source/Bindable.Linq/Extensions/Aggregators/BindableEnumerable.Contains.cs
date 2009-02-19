@@ -30,7 +30,7 @@ namespace Bindable.Linq
         public static IBindable<bool> Contains<TSource>(this IBindableCollection<TSource> source, TSource value, IEqualityComparer<TSource> comparer) where TSource : class
         {
             comparer = comparer ?? new DefaultComparer<TSource>();
-            value.ShouldNotBeNull("value");
+            Guard.NotNull(value, "value");
             return source.Where(s => comparer.Equals(s, value)).Any();
         }
 	}

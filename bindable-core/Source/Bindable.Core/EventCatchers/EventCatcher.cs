@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Bindable.Core.EventMonitoring;
+using Microsoft.Contracts;
 
 namespace Bindable.Core.EventCatchers
 {
@@ -41,7 +42,7 @@ namespace Bindable.Core.EventCatchers
         /// </summary>
         /// <param name="count">The count.</param>
         /// <returns></returns>
-        public CapturedEvent<TEventArgs>[] DequeueNextEvents(int count)
+        public CapturedEvent<TEventArgs>[] DequeueMany(int count)
         {
             var results = new List<CapturedEvent<TEventArgs>>();
             for (var i = 0; i < count; i++)
@@ -52,6 +53,10 @@ namespace Bindable.Core.EventCatchers
                 }
                 results.Add(_capturedEvents.Dequeue());
             }
+            if (results.Count != count)
+            {
+                throw new Exception(string.Format("Only {0} events were raised, but the event catcher was asked for {1}.", results.Count, count));
+            }
             return results.ToArray();
         }
 
@@ -59,9 +64,9 @@ namespace Bindable.Core.EventCatchers
         /// Dequeues the next event from the queue.
         /// </summary>
         /// <returns></returns>
-        public CapturedEvent<TEventArgs> DequeueNextEvent()
+        public CapturedEvent<TEventArgs> Dequeue()
         {
-            return DequeueNextEvents(1).FirstOrDefault();
+            return DequeueMany(1).First();
         }
 
         /// <summary>

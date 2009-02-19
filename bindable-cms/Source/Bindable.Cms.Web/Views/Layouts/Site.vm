@@ -25,8 +25,12 @@
     <div class="nav">
       <div class="nav-in">
         <ul>
-          <li class='active'><a href="/">Home</a></li>
-          <li class='active'><a href="/architecture/home">Home</a></li>
+          $Html.MenuLink("Home", "Home", "/")
+          $Html.MenuLink("Architecture", "Client Architecture", "/architecture/home")
+          $Html.MenuLink("Patterns", "Patterns &amp; Samples", "/patterns/home")
+          $Html.MenuLink("Projects", "Projects", "/projects/home")
+          $Html.MenuLink("Presentations", "Presentations", "/general/presentations")
+          $Html.MenuLink("Contact", "Contact", "/general/contact")
         </ul>
       </div>
     </div>
